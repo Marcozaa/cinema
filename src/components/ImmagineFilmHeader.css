@@ -1,0 +1,11 @@
+.img{
+    position: absolute; /*slega il componente dal resto della pagina*/ 
+    /* Possiamo specificare la posizione di un componente posizionato con absolute in questo modo:
+    /**
+    * left:0 , non ci sarà margine tra il componente e la parte sinistra della pagina
+    * left: 10 , ci saranno 10px di margine tra il componente e la parte sinistra della pagina
+    * lo stesso vale per top, right, bottom.
+    */
+    width: 10rem;    /*1 rem = 16px -> è responsive*/
+    border-radius: 0.5rem;    /*arrotonda gli angoli*/
+}

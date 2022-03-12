@@ -1,0 +1,23 @@
+.hero{
+    font-size: 1.4rem;
+    font-weight: 'bold';
+    width: 80%;
+    white-space: pre-line; /* Permette di andare a capo dopo \n*/
+    margin: auto;   /*questa la sapevo io e zanco no siumm - serve per dare lo stesso margine a dx e sx -> responsive*/
+}
+
+.title{
+    
+}
+
+.paragraph{
+    font-weight: 200;
+    width:80%;
+    font-size: 0.9rem;
+    color:  #DBDBDB;
+}
+
+.button{
+    background: #5E39F0;
+    
+}
