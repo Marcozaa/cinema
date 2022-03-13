@@ -1,0 +1,32 @@
+.containerRettangoloHero{
+     
+  background: #060A33;
+  padding: 2rem;
+  border-radius: 0.5rem 0.5rem  0px  0px;
+  margin-top: 5rem;
+}
+
+.containerRettangoloHero > .cards > .card{
+    height: 16rem;
+    width: 12rem;
+  
+    border-radius: 0.5rem;
+}
+.containerRettangoloHero > .cards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
+    
+}
+@media screen and (max-width: 900px) {
+  .containerRettangoloHero{
+    display: none;
+    margin-top: 1rem;
+}
+}
+.points{
+    background-color: beige;
+    
+}

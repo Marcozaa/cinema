@@ -1,0 +1,14 @@
+.point{
+    
+    background-color: #3B2FC1;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    top: 26rem;
+    filter: blur(2rem);
+    opacity: 0.2;
+    
+
+}

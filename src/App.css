@@ -45,16 +45,19 @@
 .content{
   
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto;
 }
 .content > .rettangolo{
-  height: 30rem;
-  background: #060A33;
+ 
+ height: auto;
+  width: 70%;
 
 }
 .titolone{
-
+  width: 80%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }

@@ -1,12 +1,30 @@
 .hero{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 'bold';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 80%;
     white-space: pre-line; /* Permette di andare a capo dopo \n*/
-    margin: auto;   /*questa la sapevo io e zanco no siumm - serve per dare lo stesso margine a dx e sx -> responsive*/
+    /*margin: auto;   /*questa la sapevo io e zanco no siumm - serve per dare lo stesso margine a dx e sx -> responsive*/
 }
 
 .title{
+    margin-bottom: 0;
+}
+
+.brush{
+    width: 14rem;
+    margin-left: 22rem;
+}
+
+@media screen and (max-width: 1050px) {
+  .brush {
+    display: none;
+  }
+}
+.title::after{
     
 }
 

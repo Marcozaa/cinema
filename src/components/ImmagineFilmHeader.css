@@ -8,4 +8,14 @@
     */
     width: 10rem;    /*1 rem = 16px -> è responsive*/
     border-radius: 0.5rem;    /*arrotonda gli angoli*/
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+    from(rgba(0,0,0,0)), to(rgba(0,0,0,1)));
+    z-index: -1;
+
+}
+
+@media screen and (max-width: 900px) {
+  .img {
+    display: none;
+  }
 }

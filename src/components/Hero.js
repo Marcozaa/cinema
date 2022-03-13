@@ -1,13 +1,18 @@
 import './Hero.css';
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import brush from '../brushteal.png'
+import { Button } from '@mantine/core';
+
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
 function Hero({title, paragraph, button}){
     return(
         
         <div className="hero">
-            <h1 className="title">{title}</h1>                
+            <h1 className="title">{title}</h1>   
+             <img className='brush' src={brush}/>       
             <p className="paragraph">{paragraph}</p>
-            <Button >cds</Button>
+             <Button variant="light" size="xl">
+      Scopri nome
+    </Button>
         </div>
     )
 }

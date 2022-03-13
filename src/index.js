@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
-
+import { MantineProvider } from '@mantine/core';
 //  Estendiamo il tema per includere font custom, colori, etc
 const colors = {
   brand: {
@@ -19,11 +19,13 @@ const theme = extendTheme({ colors })
 
 
 ReactDOM.render(
+  <MantineProvider theme={{ colorScheme: 'dark' }}>
   <React.StrictMode>
  
     <App />
  
-  </React.StrictMode>,
+  </React.StrictMode>
+  </MantineProvider>,
   document.getElementById('root')
 );
 
