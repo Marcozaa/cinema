@@ -1,0 +1,14 @@
+.featureHomepageComplete{
+   display: flex;
+    width: 100%;
+}
+
+.featureHomepageComplete > .imageContent{
+    width: 50%;
+  
+}
+.featureHomepageComplete > .feature{
+    
+    width: 50%;
+    
+}

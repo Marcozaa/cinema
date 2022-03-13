@@ -30,9 +30,7 @@ export default function HomepageFirst() {
 
      
       </div>
-       <Point left={'30rem'} color={'#155985'}/>
-       <Point left={'10rem'} color={'#155985'}/>
-       <Point left={'50rem'} color={'#155985'} />
+      
     </div>
   )
 }

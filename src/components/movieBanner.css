@@ -1,0 +1,25 @@
+.movieBanner{
+    border-radius: 0.5rem;
+    width: 80%;
+    height: 8rem;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+   
+}
+
+.movieBanner > .nome{
+    position: absolute;
+    font-size: 35px;
+    font-weight: 700;
+    left: 0;
+    bottom: 0;
+}
+
+.movieBanner > .number{
+    position: absolute;
+    font-size: 25px;
+    font-weight: 100;
+    left: 0;
+    top: 0;
+}

@@ -20,7 +20,7 @@ export default function Sponsors({paragraph}) {
       <div className="bottom">
         <p className="paragraph">{paragraph}</p>
       </div>
-      <Divider />
+     
     </div>
   )
 }

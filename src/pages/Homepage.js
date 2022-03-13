@@ -9,6 +9,7 @@ import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { useRef } from 'react';
 import HomepageFirst from './HomepageFirst';
 import Sponsors from '../components/Sponsors';
+import HomepageSecond from './HomepageSecond';
 export default function Homepage() {
    
   return (
@@ -20,6 +21,7 @@ export default function Homepage() {
 
         <Sponsors paragraph={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam'} />
      
+      <HomepageSecond />
       
     
     </div>

@@ -4,6 +4,9 @@
   padding: 2rem;
   border-radius: 0.5rem 0.5rem  0px  0px;
   margin-top: 5rem;
+-webkit-box-shadow: 0 -3px 53px -3px rgba(0, 0, 0, 0.671), 3px 0px 3px -3px black, -3px 0px 3px -3px black;
+    -moz-box-shadow:    0 -3px 53px -3px rgba(0, 0, 0, 0.671), 3px 0px 3px -3px black, -3px 0px 3px -3px black;
+    box-shadow:         0 -3px 53px -3px rgba(0, 0, 0, 0.671), 3px 0px 3px -3px black, -3px 0px 3px -3px black;
 }
 
 .containerRettangoloHero > .cards > .card{

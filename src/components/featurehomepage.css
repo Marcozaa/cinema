@@ -1,0 +1,57 @@
+.featureHomepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    position: relative;
+    padding: 2rem;
+    
+    text-align: start;
+}
+
+.featureHomepage > .title{
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 700;
+  
+}
+
+.featureHomepage > .plusButton{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #815AF2;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    color: black;
+    
+}
+.featureHomepage > .paragraph{
+    
+    color: #B1B1B1;
+    font-size: 0.8rem;
+    font-weight: 200;
+    width: 100%;
+}
+
+.checkedfeature{
+    display: flex;
+
+}
+.checkedfeature > p{
+    margin-left: 1rem;
+    font-size: 1rem;
+    font-weight:300;
+}
+
+.featureHomepage > .features{
+    
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+}

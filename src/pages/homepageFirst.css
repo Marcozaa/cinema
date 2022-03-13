@@ -17,3 +17,7 @@
  justify-content: center;
  align-items: center;
 }
+.homepageFirst{
+  background: radial-gradient(ellipse at top, #0E1F60, transparent),
+            radial-gradient(ellipse at bottom, #155985, transparent);
+}
