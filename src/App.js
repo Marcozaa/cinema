@@ -25,8 +25,7 @@ function App() {
    <main data-scroll-container ref={containerRef}>
      <div data-scroll-container>
      <Homepage data-scroll-section/>
-     <Homepage />
-<Homepage /><Homepage />
+     
      </div>
      </main>
      </LocomotiveScrollProvider>
