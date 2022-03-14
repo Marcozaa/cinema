@@ -1,0 +1,86 @@
+.cinemaOrHomeImage{
+     width: 100%;
+    height: 30rem;
+    max-width: 30rem;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+
+}
+.cinemaOrHomeImage > .cinema{
+    width: 50%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../images/salacinema.jpg');
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+    z-index: 99;
+    
+}
+.cinemaOrHomeImage > .home{
+    width: 50%;
+    height: 100%;
+    background-color: #1c2152;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.cinemaOrHomeImage > .home > .top{
+    height: 30%;
+}
+.cinemaOrHomeImage > .home > .bottom{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+}
+.moviesPresentationHomepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -30;
+    top: 100;
+    padding: 2rem;
+}
+.moviesPresentationHomepage > .movie1{
+    width: 12rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    -moz-box-shadow: 0 0 25px #0000006c;
+-webkit-box-shadow:0 0 25px #0000006c;
+box-shadow: 0 0 25px #0000006c;
+}
+.cinemaOrHomeImage > .home > .bottom > .list{
+    display: flex;
+    
+}
+.cinemaOrHomeImage > .home > .bottom > .list > .movieonlist > .bar {
+    width: 80%;
+    background-color: gray;
+    height: 2px;
+    display: flex;
+}
+.cinemaOrHomeImage > .home > .bottom > .list > .movieonlist > .bar > .watched{
+    width: 50%;
+    background-color: azure;
+    
+}
+.cinemaOrHomeImage > .home > .bottom > .list > .movieonlist > .bar> .watched2{
+    width: 20%;
+    background-color: azure;
+}
+.cinemaOrHomeImage > .home > .bottom > .list > .movieonlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cinemaOrHomeImage > .home > .bottom > .list > .movieonlist > .movie2{
+    width: 6rem;
+    height: 8rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}

@@ -4,11 +4,14 @@
    align-items: center;
    flex-wrap: wrap;
     width: 100%;
+    
 }
 
 .featureHomepageComplete > .imageContent{
     min-width: 20rem;
     width:40%;
+    border-radius: 1rem;
+    
     
   
 }

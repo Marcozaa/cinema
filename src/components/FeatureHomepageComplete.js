@@ -10,6 +10,7 @@ export default function FeatureHomepageComplete() {
     </div>
     <div className="feature">
          <FeatureHomepage 
+    icon={'+'}
     titolo={'Crea e condividi playlists'} 
     paragrafo={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud '}/>
     </div>
