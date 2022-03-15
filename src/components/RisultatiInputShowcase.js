@@ -1,15 +1,10 @@
 import { Divider } from '@mantine/core'
 import React from 'react'
 import './risultatiInputShowcase.css'
-import { motion } from "framer-motion"
+
 export default function RisultatiInputShowcase() {
   return (
-       <motion.div
-    animate={{
-      opacity: [0,1],
-    }}
-    transition={{ duration: 1 }}
-  >
+       
     <div className='risultatiInputShowcase'>
         <div className="item">
             <div className="image">
@@ -45,6 +40,6 @@ export default function RisultatiInputShowcase() {
         </div>
        
     </div>
-    </motion.div>
+  
   )
 }

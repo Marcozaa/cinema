@@ -5,6 +5,7 @@ import Typewriter from 'typewriter-effect';
 import './universalSearchComponent.css'
 import RisultatiInputShowcase from './RisultatiInputShowcase';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 export default function UniversalSearchComponent() {
   const [showCase, setShowcase] = useState(false)
   const film = [
@@ -41,7 +42,15 @@ export default function UniversalSearchComponent() {
         
       </div>
       <div className="results">
-        {showCase == true ? <RisultatiInputShowcase /> : null}
+        {showCase == true ?
+        <motion.div
+    animate={{
+      opacity: [0,1],
+    }}
+    transition={{ duration: 1 }}
+  >
+        <RisultatiInputShowcase />
+        </motion.div> : null}
         
       </div>
   </div>
