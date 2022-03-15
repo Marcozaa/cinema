@@ -7,7 +7,7 @@ import { FaAngellist } from 'react-icons/fa';
 export default function FeatureHomepageCompletev2() {
 
   return (
-    <div className='featureHomepageComplete'>
+    <div className='featureHomepageComplete' style={{flexWrap: 'wrap'}}>
     <div className="feature">
         <FeatureHomepage 
         color={'#FAFF65'}
