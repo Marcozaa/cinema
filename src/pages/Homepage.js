@@ -17,6 +17,7 @@ import bose from '../images/bose.png'
 import bi from '../images/business-insider-2.png'
 import hulu from '../images/hulu-2 (1).png'
 import netflix from '../images/netflix-3.png'
+import HomepageThird from './HomepageThird';
 export default function Homepage() {
    
   return (
@@ -36,6 +37,7 @@ export default function Homepage() {
         />
      
       <HomepageSecond />
+      <HomepageThird />
       
     
     </div>
