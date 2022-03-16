@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CaroselloFilm from '../components/CaroselloFilm';
+import Banner from '../components/Banner';
+import './browse.css'
 export default function Browse() {
   /**
    * Effettuiamo una richiesta all'api che ci siamo "creati"
@@ -35,8 +37,12 @@ export default function Browse() {
         console.log(listaFilm)
       }); 
   }, []);
+
+
+
   return (
-    <div>
+    <div className='browseScreen'>
+      <Banner />
       {listaFilm &&  // Controlliamo che lo state non sia vuoto
         <CaroselloFilm films={listaFilm}/>
       }

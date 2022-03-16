@@ -25,7 +25,8 @@ export default function CaroselloFilm({films}) {
   }
 };
   return (
-    <div>
+    <div className='caroselloFilm'>
+      <h3>I nostri film</h3>
     {films &&  // Controlliamo che lo state non sia vuoto
     <Carousel 
     focusOnSelect={true} 

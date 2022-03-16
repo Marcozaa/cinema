@@ -1,27 +1,9 @@
 .caroselloFilm{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    height: 30vh;
-}
-
-.caroselloFilm > .film {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-   
-    height: 100%;
-    margin: 3rem;
-    background-color: blue;
-}
-.caroselloFilm > .film > h1 {
-    font-size: 1rem;
-    font-weight: 100;
-}
-
-.caroselloFilm > .film > img {
-    opacity: 0.2;
+    padding: 1rem;
+    
+  
 
 }
+

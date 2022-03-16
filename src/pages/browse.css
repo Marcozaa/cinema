@@ -1,0 +1,7 @@
+.browseScreen{
+ height: 100vh;
+ background-color: #111;
+ display: flex;
+ flex-direction: column;
+
+}
