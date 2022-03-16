@@ -3,7 +3,7 @@ import brush from '../brushteal.png'
 import { Button } from '@mantine/core';
 
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
-function Hero({title, paragraph, button}){
+function Hero({title, paragraph, button, gradient}){
     return(
         
         <div className="hero">
