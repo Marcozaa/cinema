@@ -16,7 +16,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useEffect } from 'react';
 import axios from '../axios';
-export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL}) {
+export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL, emoji}) {
 
   console.log(fetchURL)
   const base_url = "https://image.tmdb.org/t/p/original/"
@@ -35,7 +35,11 @@ export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL}
   return (
     <div
     className='row'>
+      {emoji = undefined ? 
       <h2>{title}</h2>
+        : 
+        <h2>{title} {emoji}</h2>
+      }
  
     <div className="row__posters">
      

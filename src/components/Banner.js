@@ -23,7 +23,7 @@ export default function Banner({movie}) {
             <button className='banner__button'>Aggiungi alla lista</button>
           </div>
           <h1 className="banner__description">
-            {tronca(`${movie?.overview}`)}
+            {tronca(`${movie?.overview}`, 150)}
           </h1>
         </div>
         <div className="banner--fadeBottom"/>

@@ -6,6 +6,8 @@ import CaroselloFilm from '../components/CaroselloFilm';
 import Banner from '../components/Banner';
 import './browse.css'
 import FilmRow from '../components/FilmRow';
+import { EmojiProvider, Emoji } from 'react-apple-emojis'
+import emojiData from 'react-apple-emojis/lib/data.json'
 export default function Browse() {
   /**
    * Effettuiamo una richiesta all'api che ci siamo "creati"
@@ -80,23 +82,33 @@ console.log(banner)
       <Banner movie={banner}/>
 
         <>
+        <EmojiProvider data={emojiData}>
       <FilmRow 
       title='Originali HMV'
       fetchURL={requests.fetchNetflixOriginals} 
       isLargeRow={true} 
+      emoji = {<Emoji name="star" width={'20rem'} />}
       />
+    
       <FilmRow 
       title="In tendenza" 
       fetchURL={requests.fetchTrending}
-     
+     emoji = {<Emoji name="chart-increasing" width={'20rem'} />}
       />
       <FilmRow 
-       title="Documentari" 
-       fetchURL={requests.fetchDocumentaries} 
-     
+       title="Horror" 
+       fetchURL={requests.fetchHorrorMovies} 
+      emoji = {<Emoji name="skull" width={'20rem'} />}
       />
+
+      <FilmRow
+      title="Piu recensiti" 
+      fetchURL={requests.fetchTopRated}
+
+emoji = {<Emoji name="speech-balloon" width={'20rem'} />}
+      />
+        </EmojiProvider>
       </>
-      
     </div>
   )
 }
