@@ -1,9 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../axios';
+import requests from '../Requests';
 import CaroselloFilm from '../components/CaroselloFilm';
 import Banner from '../components/Banner';
 import './browse.css'
+import FilmRow from '../components/FilmRow';
 export default function Browse() {
   /**
    * Effettuiamo una richiesta all'api che ci siamo "creati"
@@ -22,30 +24,78 @@ export default function Browse() {
    */
 
   const [listaFilm, setListaFilm] = useState(null);
+  const [banner, setBanner] = useState([]);
   var c = 0;
   let items = [];
   useEffect(() => {
-    axios
-      .get('https://87.250.73.22/html/diCastri/ProgettoCinema/selectFilm.php')
-      .then(res => { // Funzione asincrona. Dopo aver preso i dati dall'api
-        res.data.map(film => // Li inseriamo in un array di oggetti
+
+    /*
+    async function fetchData(){
+
+      /*
+       * Eseguo una richiesta alla path specificata in request.fetchmovies, ovvero
+       * https://87.250.73.22/html/diCastri/ProgettoCinema/selectFilm.php
+       *//*
+      const request = await axios.get(requests.fetchMovies);
+      
+      request.data.map(film => // Li inseriamo in un array di oggetti
           items.push({
             film: film,
           })
         );
         setListaFilm({ items: items }); // E li carichiamo nello state.  
-        console.log(listaFilm)
-      }); 
+        return request // Good pratice, ritornare la richiesta
+    }
+
+    async function fetchDataForBanners(){
+      const request = await axios.get(requests.fetchMoviesBanner);
+      setBanner(
+        request.data.results[ // Scelgo randomicamente un immagine da mettere come banner
+          Math.floor(Math.random()* request.data.results.length - 1)
+        ]
+      )
+      return request
+    }
+    */
+
+
+    async function fetchDataForBanners(){
+      const request = await axios.get(requests.fetchNetflixOriginals);
+      setBanner(
+        request.data.results[ // Scelgo randomicamente un immagine da mettere come banner
+          Math.floor(Math.random()* request.data.results.length - 1)
+        ]
+      )
+      return request
+    }
+
+     fetchDataForBanners()
   }, []);
+console.log(banner)
 
 
 
   return (
     <div className='browseScreen'>
-      <Banner />
-      {listaFilm &&  // Controlliamo che lo state non sia vuoto
-        <CaroselloFilm films={listaFilm}/>
-      }
+      <Banner movie={banner}/>
+
+        <>
+      <FilmRow 
+      title='Originali HMV'
+      fetchURL={requests.fetchNetflixOriginals} 
+      isLargeRow={true} 
+      />
+      <FilmRow 
+      title="In tendenza" 
+      fetchURL={requests.fetchTrending}
+     
+      />
+      <FilmRow 
+       title="Documentari" 
+       fetchURL={requests.fetchDocumentaries} 
+     
+      />
+      </>
       
     </div>
   )

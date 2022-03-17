@@ -12,13 +12,15 @@ import UniversalSearchComponent from './components/UniversalSearchComponent';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomepageThird from './pages/HomepageThird';
 import Browse from './pages/Browse';
+import Login from './pages/Login';
 
 function App() {
    const containerRef = useRef(null)
   return (
     
-
+<> <Navbar />
     <Routes>
+     
       <Route path="/" element={<div className="App">
          <LocomotiveScrollProvider // Andando su localhost:3000/ renderizzeremo la homepage
               options={
@@ -38,10 +40,12 @@ function App() {
          </div>
         } />
       <Route path="browse" element={<Browse />} /> {/*Andando su localhost:300/browse renderizziamo il componente corrispondente */}
+      <Route path="login" element={<Login />} /> 
+
       <Route path="invoices" element={<HomepageThird />} />
     </Routes>
 
-     
+     </>
    
   );
 }

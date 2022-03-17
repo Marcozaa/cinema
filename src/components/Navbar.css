@@ -4,8 +4,15 @@
     padding-left: 2rem;                 /*crea spazio intorno al contenuto dell'elemento*/
     padding-right: 2rem;
     height: 4rem;
+    text-decoration: none;
+  
+    align-items: center;
 }
 
+.navbar > .title{
+    margin: 0;
+     text-decoration: none;
+}
 .title{
    
 }

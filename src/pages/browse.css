@@ -1,5 +1,6 @@
 .browseScreen{
- height: 100vh;
+ height: 100%;
+ width: 100%;
  background-color: #111;
  display: flex;
  flex-direction: column;
