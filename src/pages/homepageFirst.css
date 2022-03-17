@@ -18,6 +18,10 @@
  align-items: center;
 }
 .homepageFirst{
-  background: radial-gradient(ellipse at top, #0E1F60, transparent),
+  background: radial-gradient(ellipse at top, #0E1F60, transparent),     queste due righe sono le originali di zanco
             radial-gradient(ellipse at bottom, #155985, transparent);
+
+            /*background: linear-gradient(rgba(17,17,17,1) 0%, rgba(14,31,96,1) 50%);
+            background: transparent;*/
+            
 }

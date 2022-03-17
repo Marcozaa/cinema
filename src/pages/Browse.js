@@ -81,33 +81,27 @@ console.log(banner)
     <div className='browseScreen'>
       <Banner movie={banner}/>
 
-        <>
-        <EmojiProvider data={emojiData}>
-      <FilmRow 
-      title='Originali HMV'
-      fetchURL={requests.fetchNetflixOriginals} 
-      isLargeRow={true} 
-      emoji = {<Emoji name="star" width={'20rem'} />}
-      />
-    
-      <FilmRow 
-      title="In tendenza" 
-      fetchURL={requests.fetchTrending}
-     emoji = {<Emoji name="chart-increasing" width={'20rem'} />}
-      />
-      <FilmRow 
-       title="Horror" 
-       fetchURL={requests.fetchHorrorMovies} 
-      emoji = {<Emoji name="skull" width={'20rem'} />}
-      />
+      <>
+        <FilmRow 
+          title='Originali HMV'
+          fetchURL={requests.fetchNetflixOriginals} 
+          isLargeRow={true}
+        />
+      
+        <FilmRow 
+          title="In tendenza" 
+          fetchURL={requests.fetchTrending}
+        />
 
-      <FilmRow
-      title="Piu recensiti" 
-      fetchURL={requests.fetchTopRated}
+        <FilmRow 
+          title="Horror" 
+          fetchURL={requests.fetchHorrorMovies} 
+        />
 
-emoji = {<Emoji name="speech-balloon" width={'20rem'} />}
-      />
-        </EmojiProvider>
+        <FilmRow
+          title="Piu recensiti" 
+          fetchURL={requests.fetchTopRated}
+        />
       </>
     </div>
   )

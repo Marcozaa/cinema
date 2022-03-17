@@ -7,6 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #0E1F60;
   color: #fff; /*tutti i componenti del body avranno testo bianco. Se cambio colore da css di un componente sovrascrive*/
+
+  /*test casereccio*/
+  background: linear-gradient(#111 5%, rgba(14,31,96,1) 50%);
 }
 
 code {

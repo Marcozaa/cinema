@@ -10,7 +10,7 @@ function Hero({title, paragraph, button, gradient}){
             <h1 className="title">{title}</h1>   
              <img className='brush' src={brush}/>       
             <p className="paragraph">{paragraph}</p>
-             <Button variant="light" size="xl">
+             <Button style={{ marginTop: '2rem'}} variant="light" size="xl">
       Scopri nome
     </Button>
         </div>

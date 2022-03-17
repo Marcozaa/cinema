@@ -7,6 +7,9 @@
     text-decoration: none;
   
     align-items: center;
+
+    /*colore casereccio*/
+    background-color: #111;
 }
 
 .navbar > .title{

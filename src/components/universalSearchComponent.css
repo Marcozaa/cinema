@@ -1,7 +1,7 @@
 
 .universalSearchComponent {
     display: flex;
-    
+    width: 95%;
     flex-direction: column;
 }
 
