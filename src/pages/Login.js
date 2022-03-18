@@ -1,7 +1,10 @@
 import React from 'react'
-
+import './login.css'
+import {LoginContainer} from '../components/LoginContainer.tsx'
 export default function Login() {
   return (
-    <div>Login</div>
+    <div className='loginPage'>
+      <LoginContainer />
+    </div>
   )
 }

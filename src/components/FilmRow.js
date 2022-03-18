@@ -16,6 +16,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useEffect } from 'react';
 import axios from '../axios';
+
+// Libreria effetto caricamento film
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL, emoji}) {
 
   console.log(fetchURL)
@@ -34,12 +38,12 @@ export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL,
   }, [fetchURL])
   return (
     <div
+    
     className='row'>
-      {emoji = undefined ? 
-      <h2>{title}</h2>
-        : 
-        <h2>{title} {emoji}</h2>
-      }
+ 
+
+      <h2>{title || <Skeleton />}</h2>
+       
  
     <div className="row__posters">
      
@@ -53,6 +57,7 @@ export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL,
       
      
       ))}
+     
    
       
 

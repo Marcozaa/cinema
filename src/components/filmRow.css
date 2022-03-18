@@ -21,7 +21,7 @@
 }
 
 .row__poster{
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     max-height: 100px;
     object-fit: contain;
     margin-right: 10px;
@@ -37,7 +37,7 @@
 
 .row__posterLarge{
     max-height: 250px;
-        border-radius: 0.5rem;
+        border-radius: 0.3rem;
     z-index: 9999;
 }
 
