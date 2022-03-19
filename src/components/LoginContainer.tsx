@@ -38,8 +38,8 @@ export function LoginContainer() {
       </Text>
 
       <Paper  shadow="md" p={30} mt={30} radius="md"  >
-        <TextInput label="Email" placeholder="you@mantine.dev" required />
-        <PasswordInput label="Password" placeholder="Your password" required mt="md" />
+        <TextInput label="Email" placeholder="you@gmail.com" required />
+        <PasswordInput label="Password" placeholder="La tua password" required mt="md" />
         <Group position="apart" mt="md">
           <Checkbox label="ricordami" />
           <Anchor<'a'> onClick={(event) => event.preventDefault()} href="#" size="sm">

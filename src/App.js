@@ -13,6 +13,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomepageThird from './pages/HomepageThird';
 import Browse from './pages/Browse';
 import Login from './pages/Login';
+import CardAttore from './components/CardAttore';
+import Registrati from './pages/Registrati';
 
 function App() {
    const containerRef = useRef(null)
@@ -41,7 +43,8 @@ function App() {
         } />
       <Route path="browse" element={<Browse />} /> {/*Andando su localhost:300/browse renderizziamo il componente corrispondente */}
       <Route path="login" element={<Login />} /> 
-
+      <Route path="registrati" element={<Registrati />} /> 
+      <Route path="attoreprova" element={<CardAttore />} /> 
       <Route path="invoices" element={<HomepageThird />} />
     </Routes>
 

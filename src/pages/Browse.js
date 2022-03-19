@@ -6,8 +6,8 @@ import CaroselloFilm from '../components/CaroselloFilm';
 import Banner from '../components/Banner';
 import './browse.css'
 import FilmRow from '../components/FilmRow';
-import { EmojiProvider, Emoji } from 'react-apple-emojis'
-import emojiData from 'react-apple-emojis/lib/data.json'
+import { motion } from 'framer-motion';
+import RecipeReviewCard from '../components/MovieCardExpand';
 export default function Browse() {
   /**
    * Effettuiamo una richiesta all'api che ci siamo "creati"
@@ -79,29 +79,67 @@ console.log(banner)
 
   return (
     <div className='browseScreen'>
+      <motion.div // animazione semplice
+        animate={{
+          opacity: [0,1],
+        }}
+        transition={{ duration: 0.4 }}
+      >
       <Banner movie={banner}/>
+      </motion.div>
 
       <>
+      <motion.div // animazione semplice
+        animate={{
+          opacity: [0,1],
+          y: [-20, 0],
+        }}
+        transition={{ duration: 0.5 }}
+      >
         <FilmRow 
           title='Originali HMV'
           fetchURL={requests.fetchNetflixOriginals} 
           isLargeRow={true}
         />
-      
+      </motion.div>
+      <motion.div // animazione semplice
+        animate={{
+          opacity: [0,1],
+          y: [-30, 0],
+        }}
+        transition={{ duration: 0.7 }}
+      >
         <FilmRow 
           title="In tendenza" 
           fetchURL={requests.fetchTrending}
         />
+        </motion.div>
 
+      <motion.div // animazione semplice
+        animate={{
+          opacity: [0,1],
+          y: [-40, 0],
+        }}
+        transition={{ duration: 0.9 }}
+      >
         <FilmRow 
           title="Horror" 
           fetchURL={requests.fetchHorrorMovies} 
         />
+      </motion.div>
 
+      <motion.div // animazione semplice
+        animate={{
+          opacity: [0,1],
+          y: [-50, 0],
+        }}
+        transition={{ duration: 0.9 }}
+      >
         <FilmRow
           title="Piu recensiti" 
           fetchURL={requests.fetchTopRated}
         />
+      </motion.div>
       </>
     </div>
   )
