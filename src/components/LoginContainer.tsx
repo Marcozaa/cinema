@@ -65,7 +65,7 @@ export function LoginContainer() {
       align="center" mt={5}
 >
         Non hai ancora un account?{' '}
-        <Anchor<'a'> href="#" size="sm" onClick={(event) => event.preventDefault()}>
+        <Anchor<'a'> href="/registrati" size="sm" >
           Crea account
         </Anchor>
       </Text>
