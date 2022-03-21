@@ -8,7 +8,7 @@ function Navbar () {
 
         <div className="buttons">
             <Link to="login"><Button variant="light" size='md'>Login in</Button></Link>
-            <Button variant="light" color={'teal'} size='md'>Registrati</Button>
+            <Link to="registrati"><Button variant="light" color={'teal'} size='md'>Registrati</Button></Link>
         </div>
     </div>)
 }

@@ -7,6 +7,7 @@
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "@mantine/core": "^4.0.2",
+    "@mantine/form": "^4.0.7",
     "@mantine/hooks": "^4.0.2",
     "@mantine/next": "^4.0.2",
     "@mui/icons-material": "^5.5.1",
@@ -29,7 +30,8 @@
     "swiper": "^8.0.7",
     "tabler-icons-react": "^1.39.0",
     "typewriter-effect": "^2.18.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zod": "^3.14.2"
   },
   "scripts": {
     "start": "react-scripts start",
