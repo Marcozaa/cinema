@@ -11,10 +11,43 @@ import {
   Group,
   Button,
 } from '@mantine/core';
-
+import axios from 'axios';
+import loginRequests from '../LoginRequests';
+import { useState, useEffect } from 'react';
+ import { Alert } from '@mantine/core';
+import { AlertCircle } from 'tabler-icons-react';
 export function LoginContainer() {
+ const [risultato, setRisultato] = useState(null)
+ const [email, setEmail] = useState(null)
+ const [password, setPassword] = useState(null)
+  async function fetchData() {
+      var risultato;
+      axios
+      .get( // Controlliamo che le credenziali siano corrette inviando una richiesta GET alla nostra api
+        'https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.userAuth+
+        '?emailInserita='+email +'&passwordInserita='+password
+      )
+      .then(res => {
+        setRisultato(res.data)
+      } )
+      return risultato
+    }
+
+    useEffect(() => {
+      if(risultato){ // Se l'utente inserisce credenziali corrette viene portato al profilo
+        window.location.href = '/profilo';
+      }
+    }, [risultato])
   return (
+    <>
     <Container size={420} my={40}>
+      {
+        risultato == false ? ( // Se le credenziali inserite sono sbagliate
+          <Alert icon={<AlertCircle size={16} />} title="Errore!" color="red" >
+          Le credenziali inserite sono errate! Ricontrolla.
+          </Alert>
+        ): null
+      }
       <Title
         align="center"
         sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
@@ -38,18 +71,25 @@ export function LoginContainer() {
       </Text>
 
       <Paper  shadow="md" p={30} mt={30} radius="md"  >
-        <TextInput label="Email" placeholder="you@gmail.com" required />
-        <PasswordInput label="Password" placeholder="La tua password" required mt="md" />
+        <TextInput label="Email" placeholder="you@gmail.com" 
+        onChange={e => setEmail(e.target.value)}
+        required />
+        <PasswordInput label="Password" placeholder="La tua password" 
+        onChange={e => setPassword(e.target.value)}
+        required mt="md" />
         <Group position="apart" mt="md">
           <Checkbox label="ricordami" />
           <Anchor<'a'> onClick={(event) => event.preventDefault()} href="#" size="sm">
             Password dimenticata?
           </Anchor>
         </Group>
-        <Button fullWidth mt="xl">
+        <Button 
+        fullWidth mt="xl" 
+        onClick={()=> fetchData()} >
           Entra
         </Button>
       </Paper>
     </Container>
+    </>
   );
 }
