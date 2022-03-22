@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
 import { MantineProvider } from '@mantine/core';
 import { BrowserRouter } from "react-router-dom";
+import Store from './Store';
+import { Provider } from 'react-redux'
 //  Estendiamo il tema per includere font custom, colori, etc
 const colors = {
   brand: {
@@ -21,6 +23,7 @@ const theme = extendTheme({ colors })
 
 ReactDOM.render(
   <MantineProvider theme={{ colorScheme: 'dark' }}>
+    <Provider store={Store}>
     <BrowserRouter>
   <React.StrictMode>
  
@@ -28,6 +31,7 @@ ReactDOM.render(
  
   </React.StrictMode>
   </BrowserRouter>
+  </Provider>
   </MantineProvider>,
   document.getElementById('root')
 );
