@@ -3,18 +3,26 @@
     background-color: black;
     padding: 2rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    object-fit: none;
+    flex-wrap: wrap;
 }
 .headerProfilo > .image{
     border-radius: 50%;
     height: 10rem;
     width: 10rem;
+    max-width: 10rem;
+    min-width: 10rem;
     width: 20%;
-    background-color: aquamarine;
     margin: 2rem;
     background-image: url('https://images.unsplash.com/photo-1647907316277-ef746e87db78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1NHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60');
     background-position: center;
     background-size: cover;
+
    
+}
+
+.headerProfilo > .info{
+    width: 50%;
 }
