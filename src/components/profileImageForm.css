@@ -1,0 +1,28 @@
+.profileImageForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.profileImageForm > .content{
+    display: flex;
+    justify-content: center;
+    background-color: #2C2E33;
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    position: relative;
+}
+
+.profileImageForm > .content > .addIcon{
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.profileImageForm > .content > .addIcon > #input{
+    display: none;
+    z-index: -10;
+}

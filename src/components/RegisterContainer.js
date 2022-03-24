@@ -19,6 +19,7 @@ import { NumberInput, Box } from '@mantine/core';
 import { useState, useEffect } from 'react';
  import { Alert } from '@mantine/core';
 import { AlertCircle } from 'tabler-icons-react';
+import ProfileImageForm from './ProfileImageForm';
 
 const schema = z.object({
   name: z.string().min(2, { message: 'Name should have at least 2 letters' }),
@@ -80,6 +81,7 @@ async function insertData() {
 <Paper  shadow="md" p={30} mt={30} radius="md"  >
        <Box sx={{ maxWidth: 340 }} mx="auto">
       <form onSubmit={form.onSubmit((values) => console.log(values))}>
+        <ProfileImageForm />
         <TextInput
           required
           label="Email"

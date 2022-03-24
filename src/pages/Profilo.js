@@ -1,7 +1,7 @@
 import React from 'react'
 import './profilo.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from '../counterSlice'
+import { decrement, increment, incrementByAmount } from '../counterSlice'
 export default function Profilo() {
   const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
@@ -10,7 +10,7 @@ export default function Profilo() {
     <div>
         <button
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onClick={() => dispatch(incrementByAmount(22))}
         >
           Increment
         </button>
