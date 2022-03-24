@@ -16,10 +16,17 @@ import loginRequests from '../LoginRequests';
 import { useState, useEffect } from 'react';
  import { Alert } from '@mantine/core';
 import { AlertCircle } from 'tabler-icons-react';
+import { decrement, increment, incrementByAmount, setLoginData} from '../counterSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from "react-router-dom";
+
 export function LoginContainer() {
  const [risultato, setRisultato] = useState(null)
  const [email, setEmail] = useState(null)
  const [password, setPassword] = useState(null)
+ const dispatch = useDispatch() // Get dati con REDUX
+ const navigate = useNavigate(); // caricare path dinamicamente, senza fare il reload delle pagine.
+
   async function fetchData() {
       var risultato;
       axios
@@ -29,13 +36,15 @@ export function LoginContainer() {
       )
       .then(res => {
         setRisultato(res.data)
+          dispatch(setLoginData(email))
+        
       } )
       return risultato
     }
 
     useEffect(() => {
       if(risultato){ // Se l'utente inserisce credenziali corrette viene portato al profilo
-        window.location.href = '/profilo';
+        navigate('/profilo');
       }
     }, [risultato])
   return (
