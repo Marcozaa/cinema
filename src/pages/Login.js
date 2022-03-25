@@ -11,7 +11,6 @@ export default function Login() {
   }, [])
   return (
     <div className='loginPage'>
-      {count}
       <LoginContainer />
     </div>
   )
