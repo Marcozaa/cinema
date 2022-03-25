@@ -3,7 +3,8 @@ const loginRequests = {
     userCreation: '/inserimentoUtente.php',
     fetchUserData: '/fetchUserData.php',
     playlistCreation: '/createPlaylist.php',
-    fetchPlaylist: '/fetchUserPlaylist.php'
+    fetchPlaylist: '/fetchUserPlaylist.php',
+    getPlaylistThumbnails: '/getPlaylistThumbnails.php'
 }
 
 export default loginRequests

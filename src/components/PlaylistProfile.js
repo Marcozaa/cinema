@@ -10,10 +10,12 @@ import { useEffect } from 'react'
 import { Modal, Button, Group } from '@mantine/core';
 export default function PlaylistProfile() {
   var idUtente = useSelector((state) => state.idUtente.value)
-  const [playlist, setPlaylist] = useState() // The retrieved playlists are stored in this state
+  console.log(useSelector((state) => state.idUtente.value))
+  const [playlist, setPlaylist] = useState([]) // The retrieved playlists are stored in this state
   const [opened, setOpened] = useState(false); // State per apertura playlist a schermo
   const [openedPlaylistName, setOpenedPlaylistName] = useState(""); // State per apertura playlist a schermo
   useEffect(() => {
+    
     async function fetchPlaylist(){
       const request = await axios.get(loginRequests.fetchPlaylist+
         "?cliente="+idUtente);
@@ -41,7 +43,11 @@ export default function PlaylistProfile() {
       <div class="playlists">
         {playlist && (
         playlist.map(playlist => (
-            <PlaylistCard setOpened={setOpened} setOpenedPlaylistName={setOpenedPlaylistName} nome={playlist.nome} />
+            <PlaylistCard 
+            setOpened={setOpened} 
+            setOpenedPlaylistName={setOpenedPlaylistName} 
+            id={playlist.ID} 
+            nome={playlist.nome} />
         ))
         )}
 

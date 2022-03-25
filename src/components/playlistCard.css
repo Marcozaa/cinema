@@ -12,10 +12,26 @@
 
 .playlistcard > .image{
     margin: 2rem;
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 0.3rem;
-    background-image: url('https://images.unsplash.com/photo-1648071218423-043a47f86862?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60');
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('../images/moviePlaceholder.png');
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: aquamarine;
+    overflow: hidden;
+}
+
+.playlistcard > .image > .locandina{
+    width: 3rem;
+    height: 4rem;
+    padding: 0;
+    
 }
