@@ -5,6 +5,7 @@ import SwipeableEdgeDrawer from './SwipableMenu'
 
 
 export default function PlaylistProfile() {
+  
   return (
       <div className='playlistContainer'> 
       <div className="header">

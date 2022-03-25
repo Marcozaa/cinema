@@ -6,7 +6,7 @@ import './HeaderProfilo.css'
 import './headerPlaylist.css'
 import { Textarea, TextInput } from '@mantine/core';
 import { Dots } from 'tabler-icons-react';
-export default function HeaderPlaylist() {
+export default function HeaderPlaylist({setNomePlaylist}) {
   return (
     <div className='headerPlaylist'>
         <div className="image">
@@ -19,11 +19,8 @@ export default function HeaderPlaylist() {
               placeholder="La mia playlist n 1"
               label="Nome playlist"
               size="md"
+              onChange={e => setNomePlaylist(e.target.value)}
             />
-
-            
-
-            
             <Textarea
               label="Descrizione"
               placeholder="Aggiungi una descrizione opzionale della tua playlist"

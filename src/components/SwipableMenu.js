@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Global } from '@emotion/react';
 import { styled } from '@mui/material/styles';
-
+import { useState } from 'react';
 import { grey } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -37,6 +37,7 @@ const Puller = styled(Box)(({ theme }) => ({
 }));
 
 function SwipeableEdgeDrawer(props) {
+  const [nomePlaylist, setNomePlaylist] = useState()
   const { window } = props;
   const [open, setOpen] = React.useState(false);
 
@@ -95,8 +96,8 @@ function SwipeableEdgeDrawer(props) {
             overflow: 'auto',
           }}
         >
-         <HeaderPlaylist />
-         <FooterPlaylist />
+         <HeaderPlaylist setNomePlaylist={setNomePlaylist}/>
+         <FooterPlaylist nomePlaylist={nomePlaylist}/>
         </StyledBox>
       </SwipeableDrawer>
     </>

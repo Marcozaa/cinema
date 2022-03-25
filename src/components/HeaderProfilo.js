@@ -2,7 +2,6 @@ import React from 'react'
 import './HeaderProfilo.css'
 import { useState } from 'react';
 export default function HeaderProfilo({datiUtente}) {
-console.log(datiUtente)
   return (
     <div className='headerProfilo'>
         <div className="image">

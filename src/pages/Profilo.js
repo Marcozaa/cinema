@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 import axios from 'axios';
 import loginRequests from '../LoginRequests';
 import PlaylistProfile from '../components/PlaylistProfile';
+import { setIdUtente } from '../utenteSlice'
 export default function Profilo() {
   const [value, setValue] = React.useState('playlists'); // Valore mini navbar profilo
   const emailUtente = useSelector((state) => state.counter.value)
@@ -35,26 +36,17 @@ export default function Profilo() {
       setDatiUtente(
         request.data
       )
+      dispatch(setIdUtente(request.data[0].ID))
       return request
     }
 
         fetchUserData()
   }, []);
   
+
   return (
     <>
     <div>
-
-      {/*
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(setLoginData("hi"))}
-        >
-          Increment
-        </button>
-  */}
-
-     
         <HeaderProfilo datiUtente={datiUtente}  />
         <LabelBottomNavigation value={value} setValue={setValue}/>
 
@@ -68,10 +60,6 @@ export default function Profilo() {
           <PlaylistProfile />
           </motion.div>
         ): null}     
-
-
-        
-
       </div>
 </>
   )

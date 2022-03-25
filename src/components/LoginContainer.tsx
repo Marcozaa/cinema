@@ -36,8 +36,7 @@ export function LoginContainer() {
       )
       .then(res => {
         setRisultato(res.data)
-          dispatch(setLoginData(email))
-        
+        dispatch(setLoginData(email)) // Inserisco la mail nello store di redux
       } )
       return risultato
     }
