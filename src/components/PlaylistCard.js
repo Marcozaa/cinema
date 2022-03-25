@@ -1,13 +1,13 @@
 import React from 'react'
 import './playlistCard.css'
-export default function PlaylistCard() {
+export default function PlaylistCard({nome, setOpened, setOpenedPlaylistName}) {
   return (
-    <div className="playlistcard">
+    <div className="playlistcard" onClick={() => {setOpened(true); setOpenedPlaylistName(nome)}}>
         <div className="image">
 
         </div>
         <div className="info">
-            Playlist n1 di pinto
+            {nome}
         </div>
     </div>
   )
