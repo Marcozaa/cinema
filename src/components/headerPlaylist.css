@@ -1,0 +1,29 @@
+.headerPlaylist{
+  
+    background-color: #242424;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: none;
+    flex-wrap: wrap;
+}
+.headerPlaylist > .image{
+    border-radius: 0.2rem;
+    height: 10rem;
+    width: 10rem;
+    max-width: 10rem;
+    min-width: 10rem;
+    width: 20%;
+    margin: 2rem;
+    background-image: url('../images/moviePlaceholder.png');
+    background-position: center;
+    background-size: cover;
+
+   
+}
+
+.headerPlaylist > .info{
+    width: 50%;
+  
+}

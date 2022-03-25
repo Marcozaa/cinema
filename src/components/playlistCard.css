@@ -4,7 +4,10 @@
     width: 30%;
     justify-content: flex-start;
     align-items: center;
-    
+    min-width: 20rem;
+    max-width: 22rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
 }
 
 .playlistcard > .image{

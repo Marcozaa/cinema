@@ -1,0 +1,11 @@
+.playlists{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;   
+}
+
+.playlistContainer > .header{
+    display: flex;
+    align-items: center;
+}
