@@ -10,8 +10,13 @@ import FilmRow from '../components/FilmRow';
 import { motion } from 'framer-motion';
 import loginRequests from '../LoginRequests'
 import RecipeReviewCard from '../components/MovieCardExpand';
+import MuiAlert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
+
   import { useSelector, useDispatch } from 'react-redux'
-  
+  const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 export default function Browse() {
   /**
    * Effettuiamo una richiesta all'api che ci siamo "creati"
@@ -38,7 +43,19 @@ var idUtente = useSelector((state) => state.idUtente.value)
   const [playlist, setPlaylist] = useState([]) // The retrieved playlists are stored in this state
   var c = 0;
   let items = [];
-  
+  const [open, setOpen] = React.useState(false);
+const [severity, setSeverity] = useState("success")
+const [messaggioAlert, setMessaggioAlert] = useState( `Test`)
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   useEffect(() => {
 
@@ -134,6 +151,11 @@ var idUtente = useSelector((state) => state.idUtente.value)
           fetchURL={requests.fetchTopRated}
         />
       </motion.div>
+      <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={severity} sx={{ width: '100%' }}>
+          {messaggioAlert}
+        </Alert>
+      </Snackbar>
       </>
     </div>
     )}

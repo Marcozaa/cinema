@@ -22,7 +22,7 @@ import axios from '../axios';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import RecipeReviewCard from './MovieCardExpand';
-export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL, emoji}) {
+export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL, emoji, setOpen}) {
 
   console.log(fetchURL)
   const base_url = "https://image.tmdb.org/t/p/original/"

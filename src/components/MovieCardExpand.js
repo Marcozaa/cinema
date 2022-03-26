@@ -30,7 +30,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({immagine, isLargeRow, name}) {
+export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
