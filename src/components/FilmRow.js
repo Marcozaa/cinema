@@ -50,7 +50,8 @@ export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL,
               name= {film.name}
               isLargeRow={isLargeRow}
               immagine={`${base_url}${isLargeRow ? film.poster_path : film.backdrop_path}`} 
-              alt="" />
+              alt=""
+              />
             ))}
       </div>
     </div>

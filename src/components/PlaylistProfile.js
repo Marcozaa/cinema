@@ -9,6 +9,7 @@ import loginRequests from '../LoginRequests'
 import { useEffect } from 'react'
 import { Modal, Button, Group } from '@mantine/core';
 import CheckboxListSecondary from './PlaylistRows'
+import { setPlaylistUtente} from '../playlistSlice'
 export default function PlaylistProfile() {
   var idUtente = useSelector((state) => state.idUtente.value)
   console.log(useSelector((state) => state.idUtente.value))
@@ -16,6 +17,10 @@ export default function PlaylistProfile() {
   const [opened, setOpened] = useState(false); // State per apertura playlist a schermo
   const [openedPlaylistName, setOpenedPlaylistName] = useState(""); // State per apertura playlist a schermo
   const [locandine, setLocandine] = useState([]) // STate per locandine
+
+ const dispatch = useDispatch() // Set dati con REDUX
+
+  
   useEffect(() => {
     
     async function fetchPlaylist(){
@@ -24,11 +29,13 @@ export default function PlaylistProfile() {
       setPlaylist(
         request.data
       )
+      dispatch(setPlaylistUtente(request.data)) // Inserisco le playlist nello store di redux
       return request
     }
 
      fetchPlaylist()
   }, []);
+
   return (
       <div className='playlistContainer'> 
       <Modal

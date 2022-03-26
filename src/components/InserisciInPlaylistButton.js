@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Menu, Text, useMantineTheme } from '@mantine/core';
 import { SquareCheck, Package, Users, Calendar, ChevronDown } from 'tabler-icons-react';
-
-export function InserisciInPlaylistButton() {
+import { useSelector } from 'react-redux';
+export function InserisciInPlaylistButton({nome}) {
   const theme = useMantineTheme();
+  const playlist = useSelector((state) => state.playlistUtente.value)
   return (
     <Menu
       control={
@@ -15,7 +16,9 @@ export function InserisciInPlaylistButton() {
       placement="end"
       size="lg"
     >
-      <Menu.Item
+      {playlist && (
+      playlist.map(playlist =>(
+          <Menu.Item
         icon={<Package size={16} color={theme.colors.blue[6]} />}
         rightSection={
           <Text size="xs" transform="uppercase" weight={700} color="dimmed">
@@ -23,38 +26,11 @@ export function InserisciInPlaylistButton() {
           </Text>
         }
       >
-        Cinepanettoni
+       {playlist.nome}
       </Menu.Item>
-      <Menu.Item
-        icon={<SquareCheck size={16} color={theme.colors.pink[6]} />}
-        rightSection={
-          <Text size="xs" transform="uppercase" weight={700} color="dimmed">
-            Ctrl + T
-          </Text>
-        }
-      >
-        Fantasia
-      </Menu.Item>
-      <Menu.Item
-        icon={<Users size={16} color={theme.colors.cyan[6]} />}
-        rightSection={
-          <Text size="xs" transform="uppercase" weight={700} color="dimmed">
-            Ctrl + U
-          </Text>
-        }
-      >
-        Documentari
-      </Menu.Item>
-      <Menu.Item
-        icon={<Calendar size={16} color={theme.colors.violet[6]} />}
-        rightSection={
-          <Text size="xs" transform="uppercase" weight={700} color="dimmed">
-            Ctrl + E
-          </Text>
-        }
-      >
-        Serie TV preferite
-      </Menu.Item>
+      )))}
+      
+      
     </Menu>
   );
 }

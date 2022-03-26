@@ -24,7 +24,7 @@ export function LoginContainer() {
  const [risultato, setRisultato] = useState(null)
  const [email, setEmail] = useState(null)
  const [password, setPassword] = useState(null)
- const dispatch = useDispatch() // Get dati con REDUX
+ const dispatch = useDispatch() // Set dati con REDUX
  const navigate = useNavigate(); // caricare path dinamicamente, senza fare il reload delle pagine.
 
   async function fetchData() {

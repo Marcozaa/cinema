@@ -7,6 +7,7 @@ function Navbar () {
        <h1 className="title">Cinema</h1>
 
         <div className="buttons">
+            <Link to="browse">Browse</Link>
             <Link to="login"><Button variant="light" size='md'>Login in</Button></Link>
             <Link to="registrati"><Button variant="light" color={'teal'} size='md'>Registrati</Button></Link>
         </div>

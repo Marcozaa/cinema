@@ -75,7 +75,7 @@ export default function RecipeReviewCard({immagine, isLargeRow, name}) {
           <Chip label="Fantascientifico" color='info' size='small' />
           <Chip label="Drammatico" color='info' size='small' />
           
-          <InserisciInPlaylistButton />
+          <InserisciInPlaylistButton name={name}/>
           <Typography>
           </Typography>
         </CardContent>
