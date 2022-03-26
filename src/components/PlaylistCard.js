@@ -4,7 +4,7 @@ import axios from '../axiosLogin'
 import { useState } from 'react'
 import loginRequests from '../LoginRequests'
 import { useEffect } from 'react'
-export default function PlaylistCard({nome, setOpened, setOpenedPlaylistName, id}) {
+export default function PlaylistCard({nome, setOpened, setOpenedPlaylistName, id, setLocandine}) {
   const [thumbnails, setThumbnails] = useState("")
   useEffect(() => {
     async function fetchPlaylist(){
@@ -20,7 +20,9 @@ export default function PlaylistCard({nome, setOpened, setOpenedPlaylistName, id
   return (
     <>
     {nome && (
-    <div className="playlistcard" onClick={() => {setOpened(true); setOpenedPlaylistName(nome)}}>
+    <div className="playlistcard" onClick={() => {setOpened(true); 
+    setOpenedPlaylistName(nome); 
+    setLocandine(thumbnails)}}>
         <div className="image" >
           {thumbnails && (
             thumbnails.map(thumbnail =>(

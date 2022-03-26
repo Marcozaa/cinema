@@ -8,12 +8,14 @@ import { useState } from 'react'
 import loginRequests from '../LoginRequests'
 import { useEffect } from 'react'
 import { Modal, Button, Group } from '@mantine/core';
+import CheckboxListSecondary from './PlaylistRows'
 export default function PlaylistProfile() {
   var idUtente = useSelector((state) => state.idUtente.value)
   console.log(useSelector((state) => state.idUtente.value))
   const [playlist, setPlaylist] = useState([]) // The retrieved playlists are stored in this state
   const [opened, setOpened] = useState(false); // State per apertura playlist a schermo
   const [openedPlaylistName, setOpenedPlaylistName] = useState(""); // State per apertura playlist a schermo
+  const [locandine, setLocandine] = useState([]) // STate per locandine
   useEffect(() => {
     
     async function fetchPlaylist(){
@@ -35,6 +37,9 @@ export default function PlaylistProfile() {
         title={openedPlaylistName}
       >
         {openedPlaylistName}
+        {locandine && (
+        <CheckboxListSecondary locandine={locandine}/>
+        )}
       </Modal>
       <div className="header">
       <h1 style={{marginLeft: '1rem'}}>Le tue playlists</h1>
@@ -47,7 +52,9 @@ export default function PlaylistProfile() {
             setOpened={setOpened} 
             setOpenedPlaylistName={setOpenedPlaylistName} 
             id={playlist.ID} 
-            nome={playlist.nome} />
+            nome={playlist.nome} 
+            setLocandine={setLocandine}
+            />
         ))
         )}
 
