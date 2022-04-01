@@ -11,7 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import { InserisciInPlaylistButton } from './InserisciInPlaylistButton';
-
+import { Link } from 'react-router-dom';
 import './movieCardExpand.css'
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -38,6 +38,7 @@ export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) 
   };
 
   return (
+    <Link to={`/film/${name}`}>
     <div style={{
       display: 'flex',
       flexDirection: 'column',
@@ -81,5 +82,6 @@ export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) 
         </CardContent>
       </Collapse>
     </div>
+    </Link>
   );
 }

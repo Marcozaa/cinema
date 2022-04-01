@@ -39,13 +39,15 @@ useEffect(() => {
     <>
     <div>{nome}</div>
     {film.results &&(
+
     <img src={film.results[0].image}  style={{width: '14rem'}}/>
 
     )||  <CircularProgress />}
-    <p>Le domande dei fottuti utenti inglesi</p>
+    <p>Le domande degli utenti</p>
     {faq.data &&(
     <Demo questions={faq.data.items}/>
     )}
+    
     </>
   )
 }
