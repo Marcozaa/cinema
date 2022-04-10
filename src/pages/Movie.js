@@ -140,7 +140,7 @@ useEffect(() => {
 
 </div>
 <div className="right">
-  <h5 style={{fontSize: '1.4rem', fontWeight: '400', marginBottom: '0'}}>Parole chiave <KeyTwoTone/></h5>
+ <div className="titleKeywords" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem'}} ><p style={{fontSize: '1.4rem', fontWeight: '400', marginBottom: '0'}}>Parole chiave</p> <KeyTwoTone/></div> 
   <div className="keywords">
   {paroleChiave && (
     paroleChiave.keywords.map(parola => (

@@ -5,7 +5,8 @@ const loginRequests = {
     playlistCreation: '/createPlaylist.php',
     fetchPlaylist: '/fetchUserPlaylist.php',
     getPlaylistThumbnails: '/getPlaylistThumbnails.php',
-    insertMovieInPlaylist: '/inserimentoInPlaylist.php'
+    insertMovieInPlaylist: '/inserimentoInPlaylist.php',
+    fetchTrending: '/fetchTrending.php'
 }
 
 export default loginRequests
