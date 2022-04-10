@@ -17,12 +17,14 @@ import CardAttore from './components/CardAttore';
 import Registrati from './pages/Registrati';
 import Profilo from './pages/Profilo'
 import Movie from './pages/Movie';
+import Footer, { FooterSimple } from './components/Footer.js';
 
 function App() {
    const containerRef = useRef(null)
   return (
     
 <> <Navbar />
+
     <Routes>
      
       <Route path="/" element={<div className="App">
@@ -49,10 +51,11 @@ function App() {
       <Route path="attoreprova" element={<CardAttore />} /> 
       <Route path="invoices" element={<HomepageThird />} />
       <Route path="profilo" element={<Profilo/>} />
-      <Route path="film/:nome" element={<Movie />} />
+      <Route exact path="film/:nome" element={<Movie />} />
 
     </Routes>
 
+<Footer/>
      </>
    
   );

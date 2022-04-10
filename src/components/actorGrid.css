@@ -1,0 +1,44 @@
+
+.actorgrid::-webkit-scrollbar {
+
+    height: 10px;
+    border-radius: 1rem;
+}
+
+/* Track */
+.actorgrid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+.actorgrid::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.actorgrid::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+.SimilarMovieSuggestions>.bottom::-webkit-scrollbar {
+
+    height: 10px;
+    border-radius: 1rem;
+}
+
+/* Track */
+.SimilarMovieSuggestions>.bottom::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+.SimilarMovieSuggestions > .bottom::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.SimilarMovieSuggestions>.bottom::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

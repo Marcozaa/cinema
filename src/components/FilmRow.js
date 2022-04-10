@@ -24,7 +24,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import RecipeReviewCard from './MovieCardExpand';
 export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL, emoji, setOpen}) {
 
-  console.log(fetchURL)
+
   const base_url = "https://image.tmdb.org/t/p/original/"
   const [movies, setMovies] = useState([])
 
@@ -38,6 +38,8 @@ export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL,
     console.log(fetchData().data)
 
   }, [fetchURL])
+
+
   return (
     
     <div className='row'>
@@ -47,7 +49,7 @@ export default function FilmRow({title, listaFilm, isLargeRow = false, fetchURL,
               <RecipeReviewCard 
               className={`row__poster ${isLargeRow && "row__posterLarge"}`}
               key={film.name} 
-              name= {film.name}
+              name= {film.name || film.original_title}
               isLargeRow={isLargeRow}
               immagine={`${base_url}${isLargeRow ? film.poster_path : film.backdrop_path}`} 
               alt=""

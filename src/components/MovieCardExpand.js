@@ -38,13 +38,13 @@ export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) 
   };
 
   return (
-    <Link to={`/film/${name}`}>
+    
     <div style={{
       display: 'flex',
       flexDirection: 'column',
       marginRight: '1rem'
     }}>
-      
+    <Link to={`/film/${name}`}>
       <img
         component="img"
         src={immagine}
@@ -52,7 +52,7 @@ export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) 
 
         alt="Paella dish"
       />
-    
+    </Link>  
       <CardActions >
         {<IconButton aria-label="add to favorites">
         <FavoriteIcon />
@@ -82,6 +82,6 @@ export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) 
         </CardContent>
       </Collapse>
     </div>
-    </Link>
+
   );
 }
