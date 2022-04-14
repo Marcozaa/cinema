@@ -43,6 +43,8 @@ export function LoginContainer() {
 
     useEffect(() => {
       if(risultato){ // Se l'utente inserisce credenziali corrette viene portato al profilo
+        // E settati alcuni dati nella session
+        sessionStorage.setItem("email", email);
         navigate('/profilo');
       }
     }, [risultato])

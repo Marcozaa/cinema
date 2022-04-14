@@ -16,6 +16,7 @@ import { DateRange, KeyTwoTone, MovieSharp, Opacity, PlayArrow, TvOffOutlined, T
 import { Badge } from '@mantine/core';
 import { ActorGrid } from '../components/ActorGrid.js';
 import ActionAreaCard from '../components/SimilarMovieCard';
+import {NothingFoundBackground} from './errorPages/MovieNotFound.tsx';
 
 export default function Movie() {
       let { nome } = useParams();
@@ -71,6 +72,7 @@ useEffect(() => {
   return (
     <>
          {film.results &&(
+           film.results.length > 0 ? (
     <div className="movieContent" >
 
     <div className="duotoneBackground"
@@ -115,6 +117,7 @@ useEffect(() => {
 
         
     </div>
+           ):(<p><NothingFoundBackground /></p>)
 )||  <CircularProgress />}
 <div className="bottom-part">
   <div className="left">

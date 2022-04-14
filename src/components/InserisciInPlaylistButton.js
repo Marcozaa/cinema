@@ -13,14 +13,14 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 
 
-export function InserisciInPlaylistButton({nome,setOpen}) {
+export function InserisciInPlaylistButton({name,setOpen}) {
   
   const theme = useMantineTheme();
   const playlist = useSelector((state) => state.playlistUtente.value)
 
 
     async function insertInPlaylist(nomePlaylist){
-      const request = await axiosLogin.get(loginRequests.insertMovieInPlaylist+'?playlist='+nomePlaylist +'&film=' +"300");
+      const request = await axiosLogin.get(loginRequests.insertMovieInPlaylist+'?playlist='+nomePlaylist +'&film=' +name);
       
       return request
     }

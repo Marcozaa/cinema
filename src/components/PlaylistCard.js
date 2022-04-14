@@ -4,31 +4,32 @@ import axios from '../axiosLogin'
 import { useState } from 'react'
 import loginRequests from '../LoginRequests'
 import { useEffect } from 'react'
-export default function PlaylistCard({nome, setOpened, setOpenedPlaylistName, id, setLocandine}) {
-  const [thumbnails, setThumbnails] = useState("")
+export default function PlaylistCard({nome, setOpened, setOpenedPlaylistName, id, setLocandine,immagine}) {
+  const [movieNames, setMovieNames] = useState("")
   useEffect(() => {
     async function fetchPlaylist(){
-      const request = await axios.get(loginRequests.getPlaylistThumbnails+
+      const request = await axios.get(loginRequests.getMoviesInPlaylist+
         "?playlist="+id);
-      setThumbnails(request.data)
+      setMovieNames(request.data)
       return request
     }
-
-    console.log(thumbnails.length)
      fetchPlaylist()
   }, []);
   return (
     <>
     {nome && (
-    <div className="playlistcard" onClick={() => {setOpened(true); 
+    <div className="playlistcard" 
+    onClick={() => {setOpened(true); 
     setOpenedPlaylistName(nome); 
-    setLocandine(thumbnails)}}>
-        <div className="image" >
-          {thumbnails && (
+    setLocandine(movieNames)}}
+    >
+    
+        <div className="image" style={{background: `url(${immagine})`, backgroundPosition: 'center', backgroundSize: 'cover'}} >
+          {/*thumbnails && (
             thumbnails.map(thumbnail =>(
               <img className='locandina' src={thumbnail.locandina} />
             ))
-          )}
+          )*/}
 
         </div>
         <div className="info">

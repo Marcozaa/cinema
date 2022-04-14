@@ -31,13 +31,24 @@ export default function Profilo() {
 
       useEffect(() => {
     async function fetchUserData(){
-      const request = await axios.get('https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.fetchUserData +
-        '?emailInserita=' + emailUtente);
-      setDatiUtente(
+      if(sessionStorage.getItem("email")!= null){ // Se è presente il login nella session
+        const request = await axios.get('https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.fetchUserData +
+        '?emailInserita=' + sessionStorage.getItem("email"));
+         setDatiUtente(
         request.data
       )
       dispatch(setIdUtente(request.data[0].ID))
       return request
+      }else{ // Altrimenti prendo il valore dal global state (Inserito precedentemente nel login)
+      const request = await axios.get('https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.fetchUserData +
+        '?emailInserita=' + emailUtente);
+         setDatiUtente(
+        request.data
+      )
+      dispatch(setIdUtente(request.data[0].ID))
+      return request
+      }
+     
     }
 
         fetchUserData()

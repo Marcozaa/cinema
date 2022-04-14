@@ -6,12 +6,19 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Checkbox from '@mui/material/Checkbox';
 import Avatar from '@mui/material/Avatar';
+import { Link } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import { LinkOff, ShareRounded } from '@mui/icons-material';
+import { ArrowBigRight } from 'tabler-icons-react';
 
 export default function CheckboxListSecondary({locandine}) {
-    console.log(locandine)
+  let navigate = useNavigate();
+
+
   const [checked, setChecked] = React.useState([1]);
 
   const handleToggle = (value) => () => {
+    navigate(`/film/${value.film}`);
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
 
@@ -28,14 +35,14 @@ export default function CheckboxListSecondary({locandine}) {
     <List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
     {locandine.length > 0 ? (
       locandine.map(locandina => (
+
           <ListItem
+          onc
             key={locandina}
             secondaryAction={
-              <Checkbox
+              <ArrowBigRight
                 edge="end"
-                onChange={handleToggle(locandina)}
-                checked={checked.indexOf(locandina) !== -1}
-                
+                onClick={handleToggle(locandina)}                
               />
             }
             disablePadding
@@ -47,9 +54,10 @@ export default function CheckboxListSecondary({locandine}) {
                   src={locandina.locandina}
                 />
               </ListItemAvatar>
-              <ListItemText primary={`Line item ${locandina}`} />
+              <ListItemText primary={`${locandina.film}`} />
             </ListItemButton>
           </ListItem>
+
      
       ))
       ): <p>Questa playlist è vuota</p>}

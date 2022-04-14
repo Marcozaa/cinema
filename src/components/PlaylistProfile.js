@@ -12,7 +12,6 @@ import CheckboxListSecondary from './PlaylistRows'
 import { setPlaylistUtente} from '../playlistSlice'
 export default function PlaylistProfile() {
   var idUtente = useSelector((state) => state.idUtente.value)
-  console.log(useSelector((state) => state.idUtente.value))
   const [playlist, setPlaylist] = useState([]) // The retrieved playlists are stored in this state
   const [opened, setOpened] = useState(false); // State per apertura playlist a schermo
   const [openedPlaylistName, setOpenedPlaylistName] = useState(""); // State per apertura playlist a schermo
@@ -26,6 +25,7 @@ export default function PlaylistProfile() {
     async function fetchPlaylist(){
       const request = await axios.get(loginRequests.fetchPlaylist+
         "?cliente="+idUtente);
+        console.log(request.data)
       setPlaylist(
         request.data
       )
@@ -48,10 +48,10 @@ export default function PlaylistProfile() {
         <CheckboxListSecondary locandine={locandine}/>
         )}
       </Modal>
-      <div className="header">
-      <h1 style={{marginLeft: '1rem'}}>Le tue playlists</h1>
-      <SwipeableEdgeDrawer />
-      </div>
+        <div className="header">
+        <h1 style={{marginLeft: '1rem'}}>Le tue playlists</h1>
+        <SwipeableEdgeDrawer />
+        </div>
       <div class="playlists">
         {playlist && (
         playlist.map(playlist => (
@@ -60,6 +60,7 @@ export default function PlaylistProfile() {
             setOpenedPlaylistName={setOpenedPlaylistName} 
             id={playlist.ID} 
             nome={playlist.nome} 
+            immagine={playlist.immagine}
             setLocandine={setLocandine}
             />
         ))

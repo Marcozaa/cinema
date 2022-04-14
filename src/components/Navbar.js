@@ -1,5 +1,5 @@
 import './Navbar.css';
-import { Button } from '@mantine/core';
+import { Avatar, Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Autocomplete } from '@mantine/core';
@@ -10,17 +10,17 @@ function Navbar () {
        <h1 className="title">Cinema</h1>
 
         <div className="buttons">
-            <Demo />
             <Link to="browse"><Button variant="light" size='md'>Browse</Button></Link>
+          {sessionStorage.getItem("email")!= null?(
+            <Link to='profilo'> <Avatar radius="xl" /></Link>
+          ):(
+            <>
             <Link to="login"><Button variant="light" size='md'>Login in</Button></Link>
             <Link to="registrati"><Button variant="light" color={'teal'} size='md'>Registrati</Button></Link>
-        </div>
+          </>)}
+            </div>
     </div>)
 }
-/*https://developers.themoviedb.org/3/search/
-search-movies#:~:text=https%3A//
-api.themoviedb.org/3/search/movie%3Fapi_key%3D0f441200379c274a067c935d56625bc4
-%26language%3Dit%26query%3D + carattere da cercare + %26page%3D1%26include_adult%3Dfalse*/
 
 function Demo() {
   const [input, setInput] = useState(null)

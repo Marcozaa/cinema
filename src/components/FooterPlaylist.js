@@ -12,7 +12,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export default function FooterPlaylist({nomePlaylist}) {
+export default function FooterPlaylist({nomePlaylist, immaginePlaylist}) {
 const [open, setOpen] = React.useState(false);
 const [severity, setSeverity] = useState("success")
 const [messaggioAlert, setMessaggioAlert] = useState( `Hai creato una playlist con nome ${nomePlaylist}!`)
@@ -30,7 +30,7 @@ const [messaggioAlert, setMessaggioAlert] = useState( `Hai creato una playlist c
   async function createPlaylist(){
       const request = await axios.get(loginRequests.playlistCreation+
         "?nome="+nomePlaylist+
-        "&cliente="+idUtente);
+        "&cliente="+idUtente+"&immagine="+immaginePlaylist);
         if(request.data.includes("playlist_number_exceeded")){
           setSeverity("error")
           setMessaggioAlert("Hai creato troppe playlist! Eliminane qualcuna.")

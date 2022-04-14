@@ -40,7 +40,7 @@ function SwipeableEdgeDrawer(props) {
   const [nomePlaylist, setNomePlaylist] = useState()
   const { window } = props;
   const [open, setOpen] = React.useState(false);
-
+  const [immaginePlaylist, setImmaginePlaylist] = useState()
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
@@ -96,8 +96,8 @@ function SwipeableEdgeDrawer(props) {
             overflow: 'auto',
           }}
         >
-         <HeaderPlaylist setNomePlaylist={setNomePlaylist}/>
-         <FooterPlaylist nomePlaylist={nomePlaylist}/>
+         <HeaderPlaylist setNomePlaylist={setNomePlaylist} setImmaginePlaylist={setImmaginePlaylist}/> {/*PArte superiore inserimento playlist */}
+         <FooterPlaylist nomePlaylist={nomePlaylist} immaginePlaylist={immaginePlaylist}/> {/*PArte inferiore inserimento playlist */}
         </StyledBox>
       </SwipeableDrawer>
     </>
