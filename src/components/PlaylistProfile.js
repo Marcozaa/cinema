@@ -43,7 +43,7 @@ export default function PlaylistProfile() {
         onClose={() => setOpened(false)}
         title={openedPlaylistName}
       >
-        {openedPlaylistName}
+        
         {locandine && (
         <CheckboxListSecondary locandine={locandine}/>
         )}

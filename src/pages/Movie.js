@@ -17,6 +17,7 @@ import { Badge } from '@mantine/core';
 import { ActorGrid } from '../components/ActorGrid.js';
 import ActionAreaCard from '../components/SimilarMovieCard';
 import {NothingFoundBackground} from './errorPages/MovieNotFound.tsx';
+import { Modal, Group } from '@mantine/core';
 
 export default function Movie() {
       let { nome } = useParams();
@@ -25,6 +26,7 @@ export default function Movie() {
       const [cast, setCast] = useState(null) // full cast and crew
       const [similarMovies, setSimilarMovies] = useState(null) // Similar movies based on genres
       const [paroleChiave, setParoleChiave] = useState(null) // Similar movies based on genres
+      const [opened, setOpened] = useState(false);
 
      
 const pairs = ["Action",28, "Adventure",12, "Animation",16, "Comedy",35, "Crime", 80, "Documentary", 99, "Drama", 18, "Family", 10751, "Fantasy", 14, "History", 36, "Horror", 27, "Music", 10402, "Mystery", 9648, "Romance", 10749, "Science Fiction" , 878, "TV Movie", 10770, "Thriller", 53, "War", 10752, "Western", 37, "Action & Adventure", 10759, "Animation", 16, "Comedy", 35, "Crime", 80, "Documentary", 99, "Drama", 18, "Family", 10751, "Kids", 10762, "Mystery", 9648, "News", 10763, "Reality", 10764, "Sci-Fi & Fantasy", 10765, "Soap", 10766, "Talk", 10767, "War & Politics", 10768, "Western", 37, ]
@@ -73,7 +75,15 @@ useEffect(() => {
     <>
          {film.results &&(
            film.results.length > 0 ? (
-    <div className="movieContent" >
+    <div className="movieContent">
+
+      <Modal
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Prentoazione eseguita con successo"
+      >
+        {/* Modal content */}
+      </Modal>
 
     <div className="duotoneBackground"
     style={{
@@ -108,7 +118,10 @@ useEffect(() => {
       <div className="watchTrailer">Guarda Trailer <PlayArrow /></div>
       </div>
       <div className="buttons">
-      <Button variant="gradient" style={{margin: '0'}} gradient={{ from: 'darkblue', to: 'red' }}> <MovieSharp /> Guarda al cinema</Button>
+      <Button variant="gradient" 
+      onClick={() => setOpened(true)}
+      style={{margin: '0'}} 
+      gradient={{ from: 'darkblue', to: 'red' }}> <MovieSharp /> Guarda al cinema</Button>
 
       <Button variant="gradient"  gradient={{ from: 'darkblue', to: 'red' }}> <TvOutlined />  Guarda in streaming</Button>
 
