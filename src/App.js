@@ -18,6 +18,7 @@ import Registrati from './pages/Registrati';
 import Profilo from './pages/Profilo'
 import Movie from './pages/Movie';
 import Footer, { FooterSimple } from './components/Footer.js';
+import Acquisto from './pages/Acquisto';
 
 function App() {
    const containerRef = useRef(null)
@@ -52,6 +53,7 @@ function App() {
       <Route path="invoices" element={<HomepageThird />} />
       <Route path="profilo" element={<Profilo/>} />
       <Route exact path="film/:nome" element={<Movie />} />
+      <Route path='acquista/:nome' element={<Acquisto />} />
 
     </Routes>
 

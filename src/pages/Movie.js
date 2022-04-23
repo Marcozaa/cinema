@@ -118,11 +118,12 @@ useEffect(() => {
       <div className="watchTrailer">Guarda Trailer <PlayArrow /></div>
       </div>
       <div className="buttons">
+      <Link to={`/acquista/${nome}`}>
       <Button variant="gradient" 
       onClick={() => setOpened(true)}
       style={{margin: '0'}} 
       gradient={{ from: 'darkblue', to: 'red' }}> <MovieSharp /> Guarda al cinema</Button>
-
+      </Link>
       <Button variant="gradient"  gradient={{ from: 'darkblue', to: 'red' }}> <TvOutlined />  Guarda in streaming</Button>
 
       </div>
