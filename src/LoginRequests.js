@@ -1,5 +1,6 @@
 const loginRequests = {
     userAuth: '/loginAuth.php',
+    salaUserAuth: '/salaLoginAuth.php',
     userCreation: '/inserimentoUtente.php',
     fetchUserData: '/fetchUserData.php',
     playlistCreation: '/createPlaylist.php',

@@ -19,6 +19,8 @@ import Profilo from './pages/Profilo'
 import Movie from './pages/Movie';
 import Footer, { FooterSimple } from './components/Footer.js';
 import Acquisto from './pages/Acquisto';
+import AdminLogins from './pages/loginPages/AdminLogins';
+import LoginPageSala from './pages/loginPages/LoginPageSala';
 
 function App() {
    const containerRef = useRef(null)
@@ -54,7 +56,8 @@ function App() {
       <Route path="profilo" element={<Profilo/>} />
       <Route exact path="film/:nome" element={<Movie />} />
       <Route path='acquista/:nome' element={<Acquisto />} />
-
+      <Route path='adminLogin' element={<AdminLogins />} />
+      <Route path='adminLogin/loginPageSala/:tipoUtente' element={<LoginPageSala />} />
     </Routes>
 
 <Footer/>
