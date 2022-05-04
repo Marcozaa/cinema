@@ -19,6 +19,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Chip } from '@mui/material';
+import { Button } from '@chakra-ui/react';
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -75,8 +76,11 @@ export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) 
           
           <Chip label="Fantascientifico" color='info' size='small' />
           <Chip label="Drammatico" color='info' size='small' />
-          
+          {sessionStorage.getItem("salaAdminUser") == null ? (
           <InserisciInPlaylistButton name={name}/>
+          ):
+          <Button>Inserisci film in sala</Button>
+          }
           <Typography>
           </Typography>
         </CardContent>

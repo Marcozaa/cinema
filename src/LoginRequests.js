@@ -8,7 +8,8 @@ const loginRequests = {
     getPlaylistThumbnails: '/getPlaylistThumbnails.php',
     insertMovieInPlaylist: '/inserimentoInPlaylist.php',
     fetchTrending: '/fetchTrending.php',
-    getMoviesInPlaylist: '/getMoviesInPlaylist.php'
+    getMoviesInPlaylist: '/getMoviesInPlaylist.php',
+    getSalaUserData: '/getSalaUserData.php'
 }
 
 export default loginRequests

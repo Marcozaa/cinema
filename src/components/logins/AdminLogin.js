@@ -5,11 +5,14 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import loginRequests from '../../LoginRequests';
+import { useNavigate } from "react-router-dom";
+
 export default function AdminLogin({tipoutente}) {
  const [email, setEmail] = useState(null)
  const [password, setPassword] = useState(null)
  const [risultato, setRisultato] = useState(null)
 
+ let navigate = useNavigate(); // react routing dinamico
 
     async function fetchData() { // Se il login va a buon fine salviamo nello state 'true'
       var risultato;
@@ -20,8 +23,14 @@ export default function AdminLogin({tipoutente}) {
         '?emailInserita='+email +'&passwordInserita='+password
       )
       .then(res => {
+        console.log(res.data)
         setRisultato(res.data) // Salviamo il risultato deo login nello state
         //dispatch(setLoginData(email)) // Inserisco la mail nello store di redux
+
+        if(res.data == true){
+        sessionStorage.setItem("salaAdminUser", true); 
+        navigate(`/dashBoardSala/${email}`);
+        }
       } )
       return risultato
     }

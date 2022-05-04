@@ -21,6 +21,7 @@ import Footer, { FooterSimple } from './components/Footer.js';
 import Acquisto from './pages/Acquisto';
 import AdminLogins from './pages/loginPages/AdminLogins';
 import LoginPageSala from './pages/loginPages/LoginPageSala';
+import DashboardGestoresala from './pages/GestoreSala/DashboardGestoresala';
 
 function App() {
    const containerRef = useRef(null)
@@ -58,6 +59,7 @@ function App() {
       <Route path='acquista/:nome' element={<Acquisto />} />
       <Route path='adminLogin' element={<AdminLogins />} />
       <Route path='adminLogin/loginPageSala/:tipoUtente' element={<LoginPageSala />} />
+      <Route path='dashBoardSala/:idUtenteSala' element={<DashboardGestoresala />} />
     </Routes>
 
 <Footer/>
