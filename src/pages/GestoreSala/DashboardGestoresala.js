@@ -2,14 +2,16 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import loginRequests from '../../LoginRequests'
 import { CardSala } from './CardSala'
 export default function DashboardGestoresala() {
     let {idUtenteSala} = useParams()
-
     const [datiUtente, setDatiUtente] = useState(null)
+    const [filmInProgrammazione, setFilmInProgrammazione] = useState(null)
     useEffect(() => {
+
       function fetchSalaUserData(){
         var risultato=""
       axios
@@ -19,10 +21,26 @@ export default function DashboardGestoresala() {
       )
       .then(res => {
         console.log(res.data)
+        sessionStorage.setItem("nomeCinema", res.data[0].cinema); 
+        sessionStorage.setItem("sala", res.data[0].nome);
+        getFilmInSala(res.data[0].nome, res.data[0].cinema)
         setDatiUtente(res.data)
         risultato = res.data
       } )
       return risultato
+      }
+
+      function getFilmInSala(sala, cinema){
+      axios
+      .get( // Controlliamo che le credenziali siano corrette inviando una richiesta GET alla nostra api
+        'https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.getFilmSala+
+        '?sala='+sala +"&cinema="+cinema
+      )
+      .then(res => {
+        console.log(res.data)
+        setFilmInProgrammazione(res.data)
+      } )
+      return 0
       }
     
     fetchSalaUserData()
@@ -48,6 +66,14 @@ export default function DashboardGestoresala() {
     numeroPosti ={datiUtente[0].numero_posti}
     />
     </div>
+    {filmInProgrammazione && (
+    filmInProgrammazione.map(film=>(
+      <CardSala 
+      cinema ={film.salaCinema}
+      nomeSala ={film.film}
+    />
+    ))
+    )}
     </>
     )
     }

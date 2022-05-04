@@ -9,7 +9,9 @@ const loginRequests = {
     insertMovieInPlaylist: '/inserimentoInPlaylist.php',
     fetchTrending: '/fetchTrending.php',
     getMoviesInPlaylist: '/getMoviesInPlaylist.php',
-    getSalaUserData: '/getSalaUserData.php'
+    getSalaUserData: '/getSalaUserData.php',
+    inserimentoFilmInSala: '/inserimentoFilmInSala.php',
+    getFilmSala:  '/getFilmInSala.php',
 }
 
 export default loginRequests
