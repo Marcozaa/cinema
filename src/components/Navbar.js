@@ -14,10 +14,18 @@ function Navbar () {
           {sessionStorage.getItem("email")!= null?(
             <Link to='profilo'> <Avatar radius="xl" /></Link>
           ):(
+            sessionStorage.getItem("idUtenteSala")!= null?(
+            <Link to={`dashBoardSala/${sessionStorage.getItem("idUtenteSala")}`}> <Avatar radius="xl" /></Link>
+
+            ):(
             <>
             <Link to="login"><Button variant="light" size='md'>Login in</Button></Link>
             <Link to="registrati"><Button variant="light" color={'teal'} size='md'>Registrati</Button></Link>
-          </>)}
+          </>
+            )
+          
+          )}
+
             </div>
     </div>)
 }

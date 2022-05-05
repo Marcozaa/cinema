@@ -20,9 +20,10 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Chip } from '@mui/material';
-import { Flex } from '@chakra-ui/react';
+import { ChakraProvider, Flex } from '@chakra-ui/react';
 import loginRequests from '../LoginRequests';
 import axios from '../axiosLogin'
+import { useToast } from '@chakra-ui/react'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -38,18 +39,18 @@ const ExpandMore = styled((props) => {
 export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) {
   const [expanded, setExpanded] = React.useState(false);
   const [opened, setOpened] = useState(false); // Modal state (Triggered by button)
-
+  const toast = useToast() // Cliccando su un orario apparirà un toast indicante il corretto inserimento.
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  async function setFilmInSala(){
+  async function setFilmInSala(ora){
     const request = await axios.get(loginRequests.inserimentoFilmInSala +
         "?nomeFilm="+ "'" + name+"'" +
         "&sala="+ "'" + sessionStorage.getItem("sala")+"'" +
         "&cinema="+ "'" + sessionStorage.getItem("nomeCinema")+"'" +
         "&data= "+ "'" + new Date().toLocaleDateString() +"'" +
-        "&ora='12:23'"
+        "&ora="+"'"+ora +"'"
     )
         }
 
@@ -68,24 +69,167 @@ export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) 
         <h1>Sala {sessionStorage.getItem("sala")}</h1>
       <Flex wrap={'wrap'} gap={'1rem'}>
       <Badge 
-            onClick={setFilmInSala}
-      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>8:00</Badge>
+          onClick={()=>{setFilmInSala("8:00");toast({
+          title: 'Film Inserito.',
+          description: "Abbiamo inserito il film in sala.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>8:00
+      </Badge>
       <Badge 
-      size='xl'  variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>9:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>10:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>11:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>12:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>13:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>14:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>15:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>16:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>17:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>18:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>19:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>20:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>21:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>22:00</Badge>
-      <Badge size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>23:00</Badge>
+            onClick={()=>{setFilmInSala("9:00"); toast({
+          title: 'Film Inserito.',
+          description: "Abbiamo inserito il film in sala.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })}}
+      size='xl'  variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>9:00
+      </Badge>
+      <Badge
+            onClick={()=>{setFilmInSala("10:00");toast({
+          title: 'Film Inserito.',
+          description: "Abbiamo inserito il film in sala.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>10:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("11:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>11:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("12:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>12:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("13:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>13:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("14:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>14:00
+      </Badge>
+      <Badge
+            onClick={()=>{setFilmInSala("15:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>15:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("16:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>16:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("17:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+            
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>17:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("18:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>18:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("19:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+          
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>19:00
+      </Badge>
+      <Badge 
+          onClick={()=>{setFilmInSala("20:00");toast({
+            title: 'Film Inserito.',
+            description: "Abbiamo inserito il film in sala.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>20:00
+      </Badge>
+      <Badge 
+            onClick={()=>{setFilmInSala("21:00");toast({
+              title: 'Film Inserito.',
+              description: "Abbiamo inserito il film in sala.",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>21:00
+      </Badge>
+      <Badge 
+          onClick={()=>{setFilmInSala("22:00");toast({
+            title: 'Film Inserito.',
+            description: "Abbiamo inserito il film in sala.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>22:00
+      </Badge>
+      <Badge 
+          onClick={()=>{setFilmInSala("23:00");toast({
+            title: 'Film Inserito.',
+            description: "Abbiamo inserito il film in sala.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })}}
+      size='xl' variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>23:00
+      </Badge>
       </Flex>
       </Modal>
     <Link to={`/film/${name}`}>
@@ -130,6 +274,7 @@ export default function RecipeReviewCard({immagine, isLargeRow, name, setOpen}) 
           </Typography>
         </CardContent>
       </Collapse>
+      
     </div>
 
   );

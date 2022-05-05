@@ -23,6 +23,7 @@ export default function DashboardGestoresala() {
         console.log(res.data)
         sessionStorage.setItem("nomeCinema", res.data[0].cinema); 
         sessionStorage.setItem("sala", res.data[0].nome);
+        sessionStorage.setItem("idUtenteSala",idUtenteSala);
         getFilmInSala(res.data[0].nome, res.data[0].cinema)
         setDatiUtente(res.data)
         risultato = res.data
@@ -64,16 +65,24 @@ export default function DashboardGestoresala() {
     cinema ={datiUtente[0].cinema}
     nomeSala ={datiUtente[0].nome}
     numeroPosti ={datiUtente[0].numero_posti}
+    fotoSala={'https://www.repstatic.it/content/nazionale/img/2021/05/02/115615635-8736a359-8ebd-4896-a594-6a453df689b2.jpg'}
     />
     </div>
+          <h1>Film in programmazione:</h1>
+    <div className='filmInProgrammazione'
+    style={{width:'60%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem'}}
+    >
+
     {filmInProgrammazione && (
     filmInProgrammazione.map(film=>(
       <CardSala 
-      cinema ={film.salaCinema}
-      nomeSala ={film.film}
-    />
+        cinema ={film.salaCinema}
+        nomeSala ={film.salaNome}
+        nomeFilm = {film.film}
+      />
     ))
     )}
+    </div>
     </>
     )
     }
