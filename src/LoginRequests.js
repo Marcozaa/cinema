@@ -12,6 +12,7 @@ const loginRequests = {
     getSalaUserData: '/getSalaUserData.php',
     inserimentoFilmInSala: '/inserimentoFilmInSala.php',
     getFilmSala:  '/getFilmInSala.php',
+    getSalaFromFilm:  '/getSalaFromFilm.php',
 }
 
 export default loginRequests

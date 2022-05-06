@@ -49,7 +49,6 @@ export default function DashboardGestoresala() {
     
   return (
     <>
-    <h1>ji</h1>
     {datiUtente && (
       <>
     <div className="infoUtente">
@@ -74,12 +73,16 @@ export default function DashboardGestoresala() {
     >
 
     {filmInProgrammazione && (
-    filmInProgrammazione.map(film=>(
+    filmInProgrammazione.map((film, index, filmArray)=>(
+      <>
       <CardSala 
         cinema ={film.salaCinema}
         nomeSala ={film.salaNome}
         nomeFilm = {film.film}
       />
+
+
+      </>
     ))
     )}
     </div>

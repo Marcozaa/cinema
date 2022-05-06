@@ -5,7 +5,7 @@ export default function Acquisto() {
     let { nome } = useParams();
   return (
       <>
-      <Steps/>
+      <Steps nomeFilmAcquisto={nome}></Steps>
     <div>{nome}</div>
     </>
   )

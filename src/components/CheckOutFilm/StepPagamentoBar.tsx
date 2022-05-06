@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Stepper, Button, Group } from '@mantine/core';
 import 'seatchart/dist/seatchart.min.css';
 import './mappaPosti.css'
+import SelezionaCinema from './SelezionaCinema';
 
 const options: Options = {
   map: {
@@ -20,7 +21,7 @@ const options: Options = {
   },
 };
 
-export default function Steps() {
+export default function Steps({nomeFilmAcquisto}) {
 
 
   const seatchartRef = useRef<SeatchartJS>(); // Mappa posti
@@ -39,8 +40,8 @@ export default function Steps() {
         <Stepper.Step label="Primo step" description="Scegli i posti">
           <Seatchart ref={seatchartRef} options={options} />
         </Stepper.Step>
-        <Stepper.Step label="Second step" description="Verify email">
-          Step 2 content: Verify email
+        <Stepper.Step label="Secondo step" description="Seleziona il cinema">
+          <SelezionaCinema nomeFilm={nomeFilmAcquisto}/>
         </Stepper.Step>
         <Stepper.Step label="Final step" description="Get full access">
           Step 3 content: Get full access
