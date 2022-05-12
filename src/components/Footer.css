@@ -1,0 +1,57 @@
+*{
+    
+}
+
+.footer-container{
+    display: block;
+    /*background-color: #060a33;*/
+    background-color: black;
+    padding-top: 4rem;
+}
+
+
+.footer{
+    height: 15rem;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    padding-top: 1.5rem;
+}
+
+.footer-title{
+    margin: auto;
+    height: 3.5rem;
+    width: 20rem;
+    font-size: 1.5rem;
+    color: rgb(150, 150, 150);
+}
+
+.third-of-footer{
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.footer-link{
+    margin-top: 1rem;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+  
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+  
+a:hover {
+    text-decoration: none;
+    color: rgb(70, 70, 70);
+}
+  
+a:active {
+    text-decoration: none;
+    color: white;
+}
