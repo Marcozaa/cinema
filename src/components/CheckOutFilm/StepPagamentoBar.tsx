@@ -1,12 +1,14 @@
 import React, { useRef } from 'react';
 import SeatchartJS, { Options } from 'seatchart';
 import Seatchart from './Seatchart.tsx';
+import ReactCardPayment from 'react-card-payment';
 import { useState } from 'react';
 import { Stepper, Button, Group } from '@mantine/core';
 import 'seatchart/dist/seatchart.min.css';
 import './mappaPosti.css'
 import SelezionaCinema from './SelezionaCinema';
-
+import Seat from './Seat';
+import Card from 'react-credit-card'
 const options: Options = {
   map: {
     rows: 7,
@@ -38,13 +40,18 @@ export default function Steps({nomeFilmAcquisto}) {
     }}>
       <Stepper active={active} onStepClick={setActive} breakpoint="sm">
         <Stepper.Step label="Primo step" description="Scegli i posti">
-          <Seatchart ref={seatchartRef} options={options} />
+          {/*<Seatchart ref={seatchartRef} options={options} />*/}
+          {[0,1,2,3,4,5].map((i)=>(
+            <Seat row={i} number={'Ivan Sif cazzo te magni? er nesquik'}/>
+
+          ))
+          }
         </Stepper.Step>
         <Stepper.Step label="Secondo step" description="Seleziona il cinema">
           <SelezionaCinema nomeFilm={nomeFilmAcquisto}/>
         </Stepper.Step>
         <Stepper.Step label="Final step" description="Get full access">
-          Step 3 content: Get full access
+          <h1>huhuuhuhu</h1>
         </Stepper.Step>
         <Stepper.Completed>
           Completed, click back button to get to previous step

@@ -5,7 +5,11 @@ export default function HeaderProfilo({datiUtente}) {
   return (
     <div className='headerProfilo'>
         <div className="image">
-            
+            {
+              /*
+                      <img className='image' src={datiUtente[0].fotoProfilo || 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png'}/>
+              */
+            }
         </div>
         <div className="info">
             <div className="name">
