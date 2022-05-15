@@ -34,6 +34,25 @@ export default function AdminLogin({tipoutente}) {
       } )
       return risultato
     }
+
+    if(tipoutente="gestoreCinema"){
+      axios
+      .get( // Controlliamo che le credenziali siano corrette inviando una richiesta GET alla nostra api
+        'https://87.250.73.22/html/diCastri/ProgettoCinema' + loginRequests.salaUserAuth+
+        '?emailInserita='+email +'&passwordInserita='+password
+      )
+      .then(res => {
+        console.log(res.data)
+        setRisultato(res.data) // Salviamo il risultato deo login nello state
+        //dispatch(setLoginData(email)) // Inserisco la mail nello store di redux
+
+        if(res.data == true){
+        sessionStorage.setItem("cinemaAdminUser", true); 
+        navigate(`/dashBoardCinema/${email}`);
+        }
+      } )
+      return risultato
+    }
     }
 
 

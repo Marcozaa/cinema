@@ -5,8 +5,8 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import loginRequests from '../../LoginRequests'
-import Barchart from './Barchart'
-import { CardSala } from './CardSala'
+import Barchart from '../GestoreSala/Barchart'
+import { CardSala } from '../GestoreSala/CardSala'
 export default function DashboardGestoresala() {
     let {idUtenteSala} = useParams()
     const [datiUtente, setDatiUtente] = useState(null)

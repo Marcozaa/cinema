@@ -22,6 +22,8 @@ import Acquisto from './pages/Acquisto';
 import AdminLogins from './pages/loginPages/AdminLogins';
 import LoginPageSala from './pages/loginPages/LoginPageSala';
 import DashboardGestoresala from './pages/GestoreSala/DashboardGestoresala';
+import DashboardGestorecinema from './pages/GestoreCinema/DashboardGestorecinema';
+
 
 function App() {
    const containerRef = useRef(null)
@@ -60,6 +62,8 @@ function App() {
       <Route path='adminLogin' element={<AdminLogins />} />
       <Route path='adminLogin/loginPageSala/:tipoUtente' element={<LoginPageSala />} />
       <Route path='dashBoardSala/:idUtenteSala' element={<DashboardGestoresala />} />
+      <Route path='dashBoardCinema/:idUtenteCinema' element={<DashboardGestorecinema />} />
+
     </Routes>
 
 <Footer/>
