@@ -8,6 +8,7 @@ import 'seatchart/dist/seatchart.min.css';
 import './mappaPosti.css'
 import SelezionaCinema from './SelezionaCinema';
 import Seat from './Seat';
+import PostoCarrello from './PostoCarrello';
 import Card from 'react-credit-card'
 const options: Options = {
   map: {
@@ -30,6 +31,7 @@ export default function Steps({nomeFilmAcquisto}) {
 
 
   const [active, setActive] = useState(0);
+  
   const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 
@@ -40,12 +42,24 @@ export default function Steps({nomeFilmAcquisto}) {
     }}>
       <Stepper active={active} onStepClick={setActive} breakpoint="sm">
         <Stepper.Step label="Primo step" description="Scegli i posti">
-          {/*<Seatchart ref={seatchartRef} options={options} />*/}
-          {[0,1,2,3,4,5].map((i)=>(
-            <Seat row={i} number={'Ivan Sif cazzo te magni? er nesquik'}/>
-
-          ))
-          }
+        <div className='informazioni'>  
+        <div className='info'><p className='testoSchermo'>Schermo</p></div>
+        <div className='info'><p className='testoInfo'>Posto</p><p className='testoInfo'>Prezzo</p></div>
+        </div>
+        <div className='containerStep1'>
+          <div className='containerMappa'>
+            {['A','B', 'C', 'D', 'E', 'F'].map((i)=>(
+              [1,2,3,4,5,6,7,8,9,10,11,12].map((j)=>(
+                <Seat row={i} number={j}/>
+              ))
+            ))
+            }
+            
+          </div>
+          <div className='carrello'>
+            <PostoCarrello row={'B'} number={4}/>
+          </div>
+        </div>
         </Stepper.Step>
         <Stepper.Step label="Secondo step" description="Seleziona il cinema">
           <SelezionaCinema nomeFilm={nomeFilmAcquisto}/>

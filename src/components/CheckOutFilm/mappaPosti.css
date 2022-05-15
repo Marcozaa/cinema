@@ -6,3 +6,58 @@
 .sc-cart-btn{
     display: none;
 }
+
+.containerMappa{
+    width: 40%;
+    height: 30rem;
+    border: 1px solid;
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    margin-left: 3rem;
+}
+
+.carrello{
+    margin-top: 1rem;
+    width: 40%;
+    height: 30rem;
+    border: 1px solid;
+    margin-right: 3rem;
+}
+
+.containerStep1{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+}
+
+.info{
+    height: 1.5rem;
+    width: 42.5%;
+    background-color: antiquewhite;
+    color: black;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.testoSchermo{
+    width: 3.8rem;
+    margin: auto;
+}
+
+.testoInfo{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.informazioni{
+    width: 94.5%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
