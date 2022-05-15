@@ -13,6 +13,7 @@ const loginRequests = {
     inserimentoFilmInSala: '/inserimentoFilmInSala.php',
     getFilmSala:  '/getFilmInSala.php',
     getSalaFromFilm:  '/getSalaFromFilm.php',
+    prenotazionePosto: '/prenotazionePostoSala.php'
 }
 
 export default loginRequests

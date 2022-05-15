@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import loginRequests from '../../LoginRequests'
 import FilmInSala from './FilmInSala'
-export default function SelezionaCinema({nomeFilm}) {
+export default function SelezionaCinema({nomeFilm,setSala}) {
     const [sale, setSale] = useState([null])
     useEffect(() => {
     async function fetchSaleData(){ 
@@ -16,11 +16,16 @@ export default function SelezionaCinema({nomeFilm}) {
      fetchSaleData()
     }, [])
     
+  
   return (
       <>
     {sale && (
         sale.map(sala=>(
-            <FilmInSala sala={sala}/>
+          sala && (
+          <div onClick={setSala(sala.nomeSala)}>
+            <FilmInSala sala={sala} />
+          </div>
+          )
         ))
 
     )}
