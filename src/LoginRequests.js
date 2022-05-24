@@ -14,7 +14,8 @@ const loginRequests = {
     getFilmSala:  '/getFilmInSala.php',
     getSalaFromFilm:  '/getSalaFromFilm.php',
     prenotazionePosto: '/prenotazionePostoSala.php',
-    getChartData: '/getChartData.php'
+    getChartData: '/getChartData.php',
+    getPrenotazioni: '/getPrenotazioniUtente.php'
 }
 
 export default loginRequests

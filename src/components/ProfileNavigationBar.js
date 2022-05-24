@@ -7,6 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Bookmark, Movie, Playlist, Presentation, UserPlus } from 'tabler-icons-react';
 import { useState } from 'react';
+import { AirplaneTicket } from '@mui/icons-material';
 export default function LabelBottomNavigation({value, setValue}) {
 
 
@@ -22,9 +23,9 @@ export default function LabelBottomNavigation({value, setValue}) {
         icon={<Movie />}
       />
       <BottomNavigationAction
-        label="Mi piace"
-        value="mipiace"
-        icon={<FavoriteIcon />}
+        label="Ordini"
+        value="ordini"
+        icon={<AirplaneTicket />}
       />
       <BottomNavigationAction
         label="Salvati"

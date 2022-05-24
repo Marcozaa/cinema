@@ -46,7 +46,7 @@ export default function Steps({nomeFilmAcquisto,idUtente}) {
   async function prenota(){
     for(var i=0; i<postiSelezionati.length; i++){
       const request = await axios.get('https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.prenotazionePosto +
-        '?sala=' + "Saturno" +"&idUtente=" + 2 +"&idPosto="+postiSelezionati[i] );
+        '?sala=' + "Saturno" +"&idUtente=" + 2 +"&idPosto="+postiSelezionati[i] + "&nomeFilm= " + nomeFilmAcquisto + "&data=" + "30-05-2022");
     }
   }
 

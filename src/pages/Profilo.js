@@ -11,12 +11,13 @@ import axios from 'axios';
 import loginRequests from '../LoginRequests';
 import PlaylistProfile from '../components/PlaylistProfile';
 import { setIdUtente } from '../utenteSlice'
+import Ticket from '../components/Ticket';
 export default function Profilo() {
   const [value, setValue] = React.useState('playlists'); // Valore mini navbar profilo
   const emailUtente = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
   const [datiUtente, setDatiUtente] = useState() // Per ora c'è solo il nome nella query
-
+  const [prenotazioni, setPrenotazioni] = useState();
 
   /**
    *  axios
@@ -51,7 +52,30 @@ export default function Profilo() {
      
     }
 
+    async function fetchPrenotazioni(){
+      
+
+       if(sessionStorage.getItem("email")!= null){ // Se è presente il login nella session
+       const request = await axios.get('https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.getPrenotazioni +
+        '?email=' + sessionStorage.getItem("email"));
+         setPrenotazioni(
+        request.data
+      )
+      dispatch(setIdUtente(request.data[0].ID))
+      return request
+      }else{ // Altrimenti prendo il valore dal global state (Inserito precedentemente nel login)
+      const request = await axios.get('https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.fetchUserData +
+        '?emailInserita=' + emailUtente);
+         setDatiUtente(
+        request.data
+      )
+      return request
+      }
+    }
+
         fetchUserData()
+
+        fetchPrenotazioni();
   }, []);
   
 
@@ -70,6 +94,20 @@ export default function Profilo() {
           >
           <PlaylistProfile />
           </motion.div>
+        ):
+        value == 'ordini' ? (
+          prenotazioni && (
+            prenotazioni.map(prenotazione =>(
+              <div className='ticketContainer'>
+                <Ticket 
+                nomeFilm = {prenotazione.nomeFilm}
+                />
+              </div>
+            )
+
+            )
+          )
+          
         ): null}     
       </div>
 </>
