@@ -21,6 +21,7 @@ import Footer, { FooterSimple } from './components/Footer.js';
 import Acquisto from './pages/Acquisto';
 import AdminLogins from './pages/loginPages/AdminLogins';
 import LoginPageSala from './pages/loginPages/LoginPageSala';
+import LoginPageCinema from './pages/loginPages/LoginPageCinema';
 import DashboardGestoresala from './pages/GestoreSala/DashboardGestoresala';
 import DashboardGestorecinema from './pages/GestoreCinema/DashboardGestorecinema';
 
@@ -61,6 +62,7 @@ function App() {
       <Route path='acquista/:nome' element={<Acquisto />} />
       <Route path='adminLogin' element={<AdminLogins />} />
       <Route path='adminLogin/loginPageSala/:tipoUtente' element={<LoginPageSala />} />
+      <Route path='adminLogin/loginPageCinema/:tipoUtente' element={<LoginPageCinema />} />
       <Route path='dashBoardSala/:idUtenteSala' element={<DashboardGestoresala />} />
       <Route path='dashBoardCinema/:idUtenteCinema' element={<DashboardGestorecinema />} />
 

@@ -3,7 +3,7 @@ import React, {useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 import loginRequests from '../../LoginRequests'
 
-function Barchart() {
+function BarchartCinema() {
   const [prenotazione, setPrenotazione]= useState([]);
   const [bigliettiVenduti, setBigliettiVenduti]= useState([]);
 
@@ -108,4 +108,4 @@ function Barchart() {
   );
 }
 
-export default Barchart;
+export default BarchartCinema;

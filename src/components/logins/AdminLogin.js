@@ -7,73 +7,75 @@ import axios from 'axios';
 import loginRequests from '../../LoginRequests';
 import { useNavigate } from "react-router-dom";
 
-export default function AdminLogin({tipoutente}) {
- const [email, setEmail] = useState(null)
- const [password, setPassword] = useState(null)
- const [risultato, setRisultato] = useState(null)
+export default function AdminLogin({ tipoutente }) {
+  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
+  const [risultato, setRisultato] = useState(null)
 
- let navigate = useNavigate(); // react routing dinamico
+  let navigate = useNavigate(); // react routing dinamico
 
-    async function fetchData() { // Se il login va a buon fine salviamo nello state 'true'
-      var risultato;
-      if(tipoutente="gestoreSala"){
+  console.log({ tipoutente })
+
+  async function fetchData() { // Se il login va a buon fine salviamo nello state 'true'
+    var risultato;
+    console.log(tipoutente)
+    if (tipoutente == "gestoreSala") {
       axios
-      .get( // Controlliamo che le credenziali siano corrette inviando una richiesta GET alla nostra api
-        'https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.salaUserAuth+
-        '?emailInserita='+email +'&passwordInserita='+password
-      )
-      .then(res => {
-        console.log(res.data)
-        setRisultato(res.data) // Salviamo il risultato deo login nello state
-        //dispatch(setLoginData(email)) // Inserisco la mail nello store di redux
+        .get( // Controlliamo che le credenziali siano corrette inviando una richiesta GET alla nostra api
+          'https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.salaUserAuth +
+          '?emailInserita=' + email + '&passwordInserita=' + password
+        )
+        .then(res => {
+          setRisultato(res.data) // Salviamo il risultato deo login nello state
+          //dispatch(setLoginData(email)) // Inserisco la mail nello store di redux
 
-        if(res.data == true){
-        sessionStorage.setItem("salaAdminUser", true); 
-        navigate(`/dashBoardSala/${email}`);
-        }
-      } )
+          if (res.data == true) {
+            sessionStorage.setItem("salaAdminUser", true);
+            navigate(`/dashBoardSala/${email}`);
+          }
+        })
       return risultato
     }
 
-    if(tipoutente="gestoreCinema"){
+    if (tipoutente == "gestoreCinema") {
+      console.log("hx")
       axios
-      .get( // Controlliamo che le credenziali siano corrette inviando una richiesta GET alla nostra api
-        'https://87.250.73.22/html/diCastri/ProgettoCinema' + loginRequests.salaUserAuth+
-        '?emailInserita='+email +'&passwordInserita='+password
-      )
-      .then(res => {
-        console.log(res.data)
-        setRisultato(res.data) // Salviamo il risultato deo login nello state
-        //dispatch(setLoginData(email)) // Inserisco la mail nello store di redux
+        .get( // Controlliamo che le credenziali siano corrette inviando una richiesta GET alla nostra api
+          'https://87.250.73.22/html/Zanchin/ProgettoCinema' + loginRequests.salaUserAuth +
+          '?emailInserita=' + email + '&passwordInserita=' + password
+        )
+        .then(res => {
+          setRisultato(res.data) // Salviamo il risultato deo login nello state
+          //dispatch(setLoginData(email)) // Inserisco la mail nello store di redux
 
-        if(res.data == true){
-        sessionStorage.setItem("cinemaAdminUser", true); 
-        navigate(`/dashBoardCinema/${email}`);
-        }
-      } )
+          if (res.data == true) {
+            sessionStorage.setItem("salaAdminUser", true);
+            navigate(`/dashBoardCinema/${email}`);
+          }
+        })
       return risultato
     }
-    }
+  }
 
 
   return (
-    <div>  
-   <TextInput 
-   label={'La tua email'}
-   placeholder="La tua email" 
-   onChange={e => setEmail(e.target.value)}
-   icon={<FaAt size={14} />} />
+    <div>
+      <TextInput
+        label={'La tua email'}
+        placeholder="La tua email"
+        onChange={e => setEmail(e.target.value)}
+        icon={<FaAt size={14} />} />
 
-    <TextInput
-    placeholder="Password"
-    label="password"
-    onChange={e => setPassword(e.target.value)}
-    required
-    />
+      <TextInput
+        placeholder="Password"
+        label="password"
+        onChange={e => setPassword(e.target.value)}
+        required
+      />
 
-    <Button
-    onClick={fetchData}
-    >Login</Button>
+      <Button
+        onClick={fetchData}
+      >Login</Button>
     </div>
   )
 }

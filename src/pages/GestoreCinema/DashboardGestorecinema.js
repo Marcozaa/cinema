@@ -5,9 +5,9 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import loginRequests from '../../LoginRequests'
-import Barchart from '../GestoreSala/Barchart'
-import { CardSala } from '../GestoreSala/CardSala'
-export default function DashboardGestoresala() {
+import BarchartCinema from './BarchartCinema'
+import { CardSalaCinema } from './CardSalaCinema'
+export default function DashboardGestorecinema() {
     let {idUtenteSala} = useParams()
     const [datiUtente, setDatiUtente] = useState(null)
     const [filmInProgrammazione, setFilmInProgrammazione] = useState(null)
@@ -21,6 +21,7 @@ export default function DashboardGestoresala() {
         '?email='+idUtenteSala
       )
       .then(res => {
+        console.log(res.data)
         //console.log(res.data)
         sessionStorage.setItem("nomeCinema", res.data[0].cinema); 
         sessionStorage.setItem("sala", res.data[0].nome);
@@ -52,14 +53,14 @@ export default function DashboardGestoresala() {
     <>
     {datiUtente && (
       <>
-    <div className="infoUtente">
+    <div className="infoUtente" style={{marginLeft: '2rem'}}>
       <p>{datiUtente[0].email}</p>
     </div>
     <div className="sala"
     style={{width: '30%', margin: 'auto'}}
     >
-      <h1 style={{width: '17rem', margin: 'auto', marginTop: '2rem', marginBottom: '1rem'}}>Sala del cinema</h1>
-    <CardSala 
+      <h1 style={{width: '17rem', margin: 'auto', marginTop: '4rem', marginBottom: '1rem'}}>Sala del cinema</h1>
+    <CardSalaCinema 
     image={datiUtente[0].immagine_sala}
     cinema ={datiUtente[0].cinema}
     nomeSala ={datiUtente[0].nome}
@@ -76,7 +77,7 @@ export default function DashboardGestoresala() {
     {filmInProgrammazione && (
     filmInProgrammazione.map((film, index, filmArray)=>(
       <>
-      <CardSala 
+      <CardSalaCinema 
         cinema ={film.salaCinema}
         nomeSala ={film.salaNome}
         nomeFilm = {film.film}
@@ -93,7 +94,7 @@ export default function DashboardGestoresala() {
       style={{width:'60%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', margin: 'auto', marginTop: '1rem', marginBottom: '3rem'}}
       >
 
-        <Barchart/>
+        <BarchartCinema/>
 
       </div>
 

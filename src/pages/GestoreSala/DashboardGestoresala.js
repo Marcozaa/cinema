@@ -52,13 +52,13 @@ export default function DashboardGestoresala() {
     <>
     {datiUtente && (
       <>
-    <div className="infoUtente">
+    <div className="infoUtente" style={{marginLeft: '2rem'}}>
       <p>{datiUtente[0].email}</p>
     </div>
     <div className="sala"
     style={{width: '30%', margin: 'auto'}}
     >
-      <h1 style={{width: '17rem', margin: 'auto', marginTop: '2rem', marginBottom: '1rem'}}>Sala del cinema</h1>
+      <h1 style={{width: '17rem', margin: 'auto', marginTop: '4rem', marginBottom: '1rem'}}>Sala del cinema</h1>
     <CardSala 
     image={datiUtente[0].immagine_sala}
     cinema ={datiUtente[0].cinema}

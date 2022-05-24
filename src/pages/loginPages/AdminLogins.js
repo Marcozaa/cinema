@@ -10,7 +10,7 @@ export default function AdminLogins() {
             <Button>Sei il gestore di una sala?</Button>
         </Link>
         <Divider orientation='vertical'/>
-        <Link to="loginPageSala/gestoreCinema">
+        <Link to="loginPageCinema/gestoreCinema">
         <Button>Sei il gestore di un cinema?</Button>
         </Link>
     </Flex>
